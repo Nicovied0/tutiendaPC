@@ -1,0 +1,12 @@
+.divMantenimiento {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 73vh;
+  padding: 9rem 21rem;
+  justify-content: center;
+}
+
+.parrafo {
+  font-size: 1.5rem;
+}

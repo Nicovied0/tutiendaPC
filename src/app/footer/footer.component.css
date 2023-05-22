@@ -1,0 +1,31 @@
+.div {
+  display: flex;
+  flex-direction: row;
+}
+
+.img {
+  border-radius: 100%;
+}
+
+.divGeneral {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  align-items: center;
+  background-color: black;
+}
+
+.a {
+  color: white;
+  text-decoration: none !important
+}
+
+.ul {
+  display: flex;
+  align-items: center;
+}
+
+.li {
+  margin: 1rem;
+
+}

@@ -13,6 +13,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { CarruselProductosComponent } from './carrusel-productos/carrusel-productos.component';
 import { SerchBarComponent } from './serch-bar/serch-bar.component';
+import { EnDesarrolloComponent } from './en-desarrollo/en-desarrollo.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SerchBarComponent } from './serch-bar/serch-bar.component';
     FooterComponent,
     FormularioComponent,
     CarruselProductosComponent,
-    SerchBarComponent
+    SerchBarComponent,
+    EnDesarrolloComponent
   ],
   imports: [
     BrowserModule,
