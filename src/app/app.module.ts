@@ -11,7 +11,6 @@ import { ProductoComponent } from './producto/producto.component';
 import { CarruselComponent } from './carrusel/carrusel.component';
 import { FooterComponent } from './footer/footer.component';
 import { FormularioComponent } from './formulario/formulario.component';
-import { CarruselProductosComponent } from './carrusel-productos/carrusel-productos.component';
 import { SerchBarComponent } from './serch-bar/serch-bar.component';
 import { EnDesarrolloComponent } from './en-desarrollo/en-desarrollo.component';
 
@@ -26,9 +25,8 @@ import { EnDesarrolloComponent } from './en-desarrollo/en-desarrollo.component';
     CarruselComponent,
     FooterComponent,
     FormularioComponent,
-    CarruselProductosComponent,
     SerchBarComponent,
-    EnDesarrolloComponent
+    EnDesarrolloComponent,
   ],
   imports: [
     BrowserModule,
