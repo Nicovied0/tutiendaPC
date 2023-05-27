@@ -1,0 +1,14 @@
+.div {
+  display: flex;
+  flex-direction: column;
+  margin: 2rem;
+  max-width: 345px;
+  height: 549px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.img {
+  width: 100%;
+  max-height: 30rem;
+}

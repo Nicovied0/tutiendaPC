@@ -1,0 +1,18 @@
+.containerProducto {
+  display: flex;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  max-width: 345px;
+}
+
+.container {
+  width: 100%;
+}
+
+.div2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}

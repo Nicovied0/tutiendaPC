@@ -1,6 +1,20 @@
-<div>
-  <app-producto
-    *ngFor="let producto of productos"
-    [producto]="producto"
-  ></app-producto>
+<div class="container">
+  <div>
+    <h2>Catalogo de productos</h2>
+    <div>
+      <h3>Ordenar por</h3>
+      <select (change)="onChangeOrder($event)">
+        <option value="x">Relevancia</option>
+        <option value="menor">Menor Precio</option>
+        <option value="mayor">Mayor Precio</option>
+      </select>
+    </div>
+  </div>
+  <div class="div2">
+    <app-producto
+      class="containerProducto"
+      *ngFor="let producto of productos"
+      [producto]="producto"
+    ></app-producto>
+  </div>
 </div>

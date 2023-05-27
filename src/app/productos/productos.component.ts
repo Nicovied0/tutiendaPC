@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProductosService } from './productos.service';
 
 @Component({
   selector: 'app-productos',
@@ -6,19 +7,33 @@ import { Component } from '@angular/core';
   styleUrls: ['./productos.component.css']
 })
 export class ProductosComponent {
-  public productos = [
-    {
-      imagen: 'https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_21233_Mouse_Glorious_Model_D_Minus_-_Matte_Black_ad043ce3-grn.jpg',
-      nombre: 'Nombre del Producto 1',
-      categoria: 'Categoría del Producto 1',
-      detalles: 'Detalles del Producto 1',
-      precio: 10.99,
-    },
-    {
-      imagen: 'https://compragamer.net/pga/imagenes_publicadas/compragamer_Imganen_general_21233_Mouse_Glorious_Model_D_Minus_-_Matte_Black_ad043ce3-grn.jpg',
-      nombre: 'Nombre del Producto 2',
-      categoria: 'Categoría del Producto 2',
-      detalles: 'Detalles del Producto 2',
-      precio: 19.99,
-    },]
+  constructor(private productosService: ProductosService) { }
+
+  productos: any = []
+
+
+  ngOnInit() {
+    this.productosService.getProductos().then((results) => {
+      this.productos = results
+      console.log(this.productos)
+    }).catch((error) => {
+      console.error('Error al obtener los repositorios', error);
+    })
+  }
+
+  onChangeOrder(event: any) {
+    const value = event.target.value;
+    this.order(value);
+  }
+
+
+  order(value: string) {
+    if (value === 'menor') {
+      return (this.productos.sort((a: any, b: any) => a.precio - b.precio));
+    } else if ((value === 'mayor')) {
+      return (this.productos.sort((a: any, b: any) => b.precio - a.precio));
+    }
+  }
+
+
 }
