@@ -11,10 +11,20 @@
     </div>
   </div>
   <div class="div2">
-    <app-producto
-      class="containerProducto"
-      *ngFor="let producto of productos"
-      [producto]="producto"
-    ></app-producto>
+    <div class="div" *ngFor="let producto of productos">
+      <div>
+        <img [src]="producto.imagen" class="img" />
+      </div>
+      <div>
+        <h2 class="nombre">{{ producto.nombre }}</h2>
+        <p>{{ producto.detalles }}</p>
+        <h3 class="precio">$ {{ producto.precio }}</h3>
+      </div>
+      <div>
+        <button class="button" (click)="verDetalle(producto.index)">
+          Ver Producto
+        </button>
+      </div>
+    </div>
   </div>
 </div>

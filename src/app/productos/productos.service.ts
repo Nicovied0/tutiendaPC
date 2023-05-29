@@ -1,18 +1,24 @@
-import { Injectable } from "@angular/core" //al ser un servicio importo el injectable de angular y ejecuto el servicion abajo
-import { HttpClient } from "@angular/common/http"
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { map } from "rxjs/operators";
 
-@Injectable({ providedIn: 'root' }) //Injectable para injectar la dependencia y ROOt para poder solicitar el servicio
-
+@Injectable({ providedIn: 'root' })
 export class ProductosService {
 
   constructor(private http: HttpClient) { }
+
   getProductos() {
-    let datos = this.http.get('https://tu-tienda-pc-default-rtdb.firebaseio.com/.json').toPromise()
-    console.log(datos)
-    return datos
-    //toPromiseActiva una futura ejecusion
+    return this.http.get<any>('https://tu-tienda-pc-default-rtdb.firebaseio.com/.json').pipe(
+      map((productos: any[]) => {
+        return productos.map((producto, index) => ({ ...producto, index: index + 1 }));
+      })
+    ).toPromise();
   }
+  
 
-
+  getProductoById(id: string) {
+    const url = `https://tu-tienda-pc-default-rtdb.firebaseio.com/${id}.json`;
+    return this.http.get<any>(url).toPromise();
+  }
 
 }

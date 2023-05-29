@@ -1,16 +1,16 @@
 import { Component } from '@angular/core';
 import { ProductosService } from './productos.service';
-
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-productos',
   templateUrl: './productos.component.html',
   styleUrls: ['./productos.component.css']
 })
+
 export class ProductosComponent {
-  constructor(private productosService: ProductosService) { }
+  constructor(private productosService: ProductosService, private router: Router) { }
 
   productos: any = []
-
 
   ngOnInit() {
     this.productosService.getProductos().then((results) => {
@@ -36,4 +36,8 @@ export class ProductosComponent {
   }
 
 
+  verDetalle(index: number) {
+    console.log(index)
+    this.router.navigate(['/producto', index]);
+  }
 }

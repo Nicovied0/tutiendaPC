@@ -1,14 +1,14 @@
 <div class="div">
   <div>
-    <img [src]="producto.imagen"  class="img"/>
+    <img [src]="productoId?.imagen" class="img" />
   </div>
   <div>
-    <h2>{{ producto.nombre }}</h2>
-    <h3>{{ producto.categoria }}</h3>
-    <h4>{{ producto.detalles }}</h4>
-    <h2>{{ producto.precio }}</h2>
+    <h2 class="nombre">{{ productoId?.nombre }}</h2>
+    <h3>{{ productoId?.categoria }}</h3>
+    <p>{{ productoId?.detalles }}</p>
+    <h3 class="precio">$ {{ productoId?.precio }}</h3>
   </div>
   <div>
-    <button>VerProducto</button>
+    <button class="button">Comprar</button>
   </div>
 </div>
