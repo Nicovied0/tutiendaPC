@@ -3,10 +3,15 @@
     <img [src]="productoId?.imagen" class="img" />
   </div>
   <div>
-    <h2 class="nombre">{{ productoId?.nombre }}</h2>
     <h3>{{ productoId?.categoria }}</h3>
+    <h2 class="nombre">{{ productoId?.nombre }}</h2>
     <p>{{ productoId?.detalles }}</p>
     <h3 class="precio">$ {{ productoId?.precio }}</h3>
+  </div>
+  <div>
+    <i class="bi bi-shield-fill-check iClass"></i>
+    <i class="bi bi-check-lg iClass"></i>
+    <i class="bi bi-truck iClass"></i>
   </div>
   <div>
     <button class="button">Comprar</button>

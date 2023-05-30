@@ -14,6 +14,7 @@ import { FooterComponent } from './footer/footer.component';
 import { FormularioComponent } from './formulario/formulario.component';
 import { SerchBarComponent } from './serch-bar/serch-bar.component';
 import { EnDesarrolloComponent } from './en-desarrollo/en-desarrollo.component';
+import { PanelAdminComponent } from './panel-admin/panel-admin.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { EnDesarrolloComponent } from './en-desarrollo/en-desarrollo.component';
     FormularioComponent,
     SerchBarComponent,
     EnDesarrolloComponent,
+    PanelAdminComponent,
   ],
   imports: [
     BrowserModule,

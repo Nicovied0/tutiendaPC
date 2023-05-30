@@ -1,5 +1,13 @@
 <nav class="nav">
-  <h2>TU TIENDA PC</h2>
+  <h2 style="cursor: pointer" (click)="goHome()">TU TIENDA PC</h2>
   <app-serch-bar class="serchbar"></app-serch-bar>
-  <i class="bi bi-cart" style="font-size: 2rem; color: #999"></i>
+  <i
+    class="bi bi-cart iClass"
+    style="font-size: 2rem; color: #fff; padding: 1rem; cursor: pointer;border-radius:100%;"
+  ></i>
+  <i
+    class="bi bi-person-circle iClass"
+    style="font-size: 2rem; color: #fff; padding: 1rem; cursor: pointer;border-radius: 100%;"
+    (click)="goProfile()"
+  ></i>
 </nav>
