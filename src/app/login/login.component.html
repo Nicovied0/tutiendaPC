@@ -2,7 +2,7 @@
   <form
     #f="ngForm"
     (ngSubmit)="f.form.valid && login(f)"
-    class="m-5 d-flex align-items-baseline justify-content-center flex-column"
+    class="m-5  forms"
   >
     <div class="m-3 d-flex flex-column">
       <label class="col-sm-2 col-form-label"> Email </label>
@@ -28,7 +28,7 @@
     </div>
     <div class="m-3 d-flex">
       <button class="btn btn-primary m-3">Login</button>
-      <button class="btn btn-danger m-3">Logout</button>
+      <button class="btn btn-danger m-3" (click)="logout()">Logout</button>
       <button (click)="consoleToken()" class="btn btn-primary m-3">
         Comprobar estado
       </button>

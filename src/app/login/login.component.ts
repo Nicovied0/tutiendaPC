@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { LoginService } from './login.service';
+import Swal from 'sweetalert2'
+
 
 
 @Component({
@@ -11,6 +13,7 @@ import { LoginService } from './login.service';
 export class LoginComponent {
   constructor(private loginService: LoginService) { }
 
+
   login(form: NgForm) {
     const email = form.value.email
     const password = form.value.password
@@ -20,6 +23,26 @@ export class LoginComponent {
   consoleToken() {
     console.log(this.loginService.getIdToken())
     console.log(this.loginService.isAuthenticated())
+    if (this.loginService.isAuthenticated() === true) {
+      // alert('Usted se encuentra logeado')
+      Swal.fire({
+        title: 'Felicitaciones!',
+        text: 'Usted se encuentra logeado',
+        icon: 'success',
+        confirmButtonText: 'Continuar'
+      })
+    } else {
+      // alert('Usted no se encuentra logeado')
+      Swal.fire({
+        title: 'Error!',
+        text: 'Usted no se encuentra logueado!',
+        icon: 'warning',
+        confirmButtonText: 'Continuar'
+      })
+    }
   }
-
+  logout() {
+    console.log("se deslogeo")
+    this.loginService.logout()
+  }
 }

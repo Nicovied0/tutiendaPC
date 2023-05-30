@@ -10,6 +10,7 @@ export class LoginService {
   token: any;
 
   constructor(private router: Router) { }
+
   login(email: string, password: string) {
     firebase.auth().signInWithEmailAndPassword(email, password)
       .then((response: any) => {
@@ -32,10 +33,11 @@ export class LoginService {
     // console.log(this.token)
     return this.token
   }
+
   isAuthenticated() {
-    // console.log(this.token)
     return this.token != null
   }
+
   logout() {
     firebase.auth().signOut().then(() => {
       this.token = null
