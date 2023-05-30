@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { LoginService } from './login/login.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +18,8 @@ import { SerchBarComponent } from './serch-bar/serch-bar.component';
 import { EnDesarrolloComponent } from './en-desarrollo/en-desarrollo.component';
 import { PanelAdminComponent } from './panel-admin/panel-admin.component';
 import { LoaderComponent } from './loader/loader.component';
+import { ProfileComponent } from './profile/profile.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -32,13 +36,16 @@ import { LoaderComponent } from './loader/loader.component';
     EnDesarrolloComponent,
     PanelAdminComponent,
     LoaderComponent,
+    ProfileComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [LoginService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

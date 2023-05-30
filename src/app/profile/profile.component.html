@@ -1,0 +1,10 @@
+<div class="div">
+  <div *ngIf="profile; else elseDiv">
+    <h2>Nombre de perfil</h2>
+    <img />
+    <h3>mis compras</h3>
+  </div>
+  <ng-template #elseDiv>
+    <app-login></app-login>
+  </ng-template>
+</div>
