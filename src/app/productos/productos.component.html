@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container" *ngIf="loading; else elseDiv">
   <div>
     <h2>Catalogo de productos</h2>
     <div>
@@ -28,3 +28,7 @@
     </div>
   </div>
 </div>
+
+<ng-template #elseDiv>
+  <app-loader></app-loader>
+</ng-template>

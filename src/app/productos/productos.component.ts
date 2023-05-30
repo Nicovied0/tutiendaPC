@@ -9,13 +9,14 @@ import { Router } from '@angular/router';
 
 export class ProductosComponent {
   constructor(private productosService: ProductosService, private router: Router) { }
-
+  public loading = false
   productos: any = []
 
   ngOnInit() {
     this.productosService.getProductos().then((results) => {
       this.productos = results
       console.log(this.productos)
+      this.loading= true
     }).catch((error) => {
       console.error('Error al obtener los repositorios', error);
     })

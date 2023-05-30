@@ -11,6 +11,7 @@ export class ProductoComponent {
   @Input() producto: any;
 
   public productoId: any
+  public loading = false
   constructor(private route: ActivatedRoute, private productosService: ProductosService) { }
 
   ngOnInit() {
@@ -28,6 +29,7 @@ export class ProductoComponent {
         // Aquí puedes hacer lo que necesites con los detalles del producto
         console.log(producto);
         this.productoId = producto
+        this.loading = true
       })
       .catch(error => {
         // Manejo de errores

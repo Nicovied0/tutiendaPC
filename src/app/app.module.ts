@@ -15,6 +15,7 @@ import { FormularioComponent } from './formulario/formulario.component';
 import { SerchBarComponent } from './serch-bar/serch-bar.component';
 import { EnDesarrolloComponent } from './en-desarrollo/en-desarrollo.component';
 import { PanelAdminComponent } from './panel-admin/panel-admin.component';
+import { LoaderComponent } from './loader/loader.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { PanelAdminComponent } from './panel-admin/panel-admin.component';
     SerchBarComponent,
     EnDesarrolloComponent,
     PanelAdminComponent,
+    LoaderComponent,
   ],
   imports: [
     BrowserModule,
