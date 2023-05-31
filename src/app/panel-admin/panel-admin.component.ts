@@ -1,3 +1,4 @@
+
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./panel-admin.component.css']
 })
 export class PanelAdminComponent {
+
+
+  public admin = true
+  public edit = false
+
+
+
+
+
+
+  editProduct() {
+    this.edit = !this.edit
+  }
 
 }

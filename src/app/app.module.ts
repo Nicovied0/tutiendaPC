@@ -20,6 +20,8 @@ import { PanelAdminComponent } from './panel-admin/panel-admin.component';
 import { LoaderComponent } from './loader/loader.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
+import { ProductsEditComponent } from './products-edit/products-edit.component';
+import { EditProductComponent } from './edit-product/edit-product.component';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,8 @@ import { LoginComponent } from './login/login.component';
     LoaderComponent,
     ProfileComponent,
     LoginComponent,
+    ProductsEditComponent,
+    EditProductComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,20 @@
+<div class="div2">
+  <div class="div" *ngFor="let producto of productos">
+    <div>
+      <img [src]="producto.imagen" class="img" />
+    </div>
+    <div>
+      <h2 class="nombre">Nombre: {{ producto.nombre }}</h2>
+      <p>{{ producto.detalles }}</p>
+      <h3 class="precio">Precio: ${{ producto.precio }}</h3>
+    </div>
+    <div>
+      <button class="button" (click)="Edit(producto.index)">
+        Editar producto
+      </button>
+      <button class="button" (click)="Edit(producto.index)">
+        x
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,4 +1,11 @@
 <div class="div">
-  <img>
-  <h2></h2>
+  <img />
+  <h2>Administrar productos</h2>
+  <button (click)="editProduct()">Editar Productos</button>
+  <div *ngIf="edit">
+    <!-- <form>
+      <span>sadas</span>
+    </form> -->
+    <app-products-edit></app-products-edit>
+  </div>
 </div>
