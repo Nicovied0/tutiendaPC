@@ -1,1 +1,24 @@
-<p>edit-product works!</p>
+<div class="div" *ngIf="loading; else elseDiv">
+  <div>
+    <div>
+      <img [src]="productoId?.imagen" class="img" />
+
+      <img [src]="imageSrc" alt="imgCargada" class="img" />
+      <input type="file" (change)="onFileSelected($event)" />
+
+      <h3 class="nombre edits">Nombre: {{ productoId?.nombre }}</h3>
+      <h3 class="categoria edits">Categoria: {{ productoId?.categoria }}</h3>
+      <h3 class="edits">Detalles: {{ productoId?.detalles }}</h3>
+      <h3 class="precio edits">Precio: $ {{ productoId?.precio }}</h3>
+    </div>
+  </div>
+  <div>
+    <span></span>
+  </div>
+  <div>
+    <button>Guardar</button>
+  </div>
+</div>
+<ng-template #elseDiv>
+  <app-loader></app-loader>
+</ng-template>
