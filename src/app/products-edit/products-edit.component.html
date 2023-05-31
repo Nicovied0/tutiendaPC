@@ -3,18 +3,14 @@
     <div>
       <img [src]="producto.imagen" class="img" />
     </div>
-    <div>
+    <div class="divText">
       <h2 class="nombre">Nombre: {{ producto.nombre }}</h2>
-      <p>{{ producto.detalles }}</p>
+      <p *ngIf="producto.detalles">Detalles: {{ producto.detalles }}</p>
       <h3 class="precio">Precio: ${{ producto.precio }}</h3>
     </div>
-    <div>
-      <button class="button" (click)="Edit(producto.index)">
-        Editar producto
-      </button>
-      <button class="button" (click)="Edit(producto.index)">
-        x
-      </button>
+    <div class="divButtons">
+      <i class="bi bi-pencil-fill icon" (click)="Edit(producto.index)"></i>
+      <i class="bi bi-trash-fill icon icon2" (click)="Edit(producto.index)"></i>
     </div>
   </div>
 </div>
