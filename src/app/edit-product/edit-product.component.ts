@@ -41,11 +41,17 @@ export class EditProductComponent {
   }
 
 
+  // subir imagenes
   public imageSrc: string | ArrayBuffer | null = null;
+  public imageSrcLink: string | null = null;
+  public editImage = false
 
-  onFileSelected(event: any) {
+  editImagen() {
+    this.editImage = !this.editImage
+  }
+
+  onFileSelected(event: any) { //carga de archivo
     const file: File = event.target.files[0];
-
     if (file) {
       const reader = new FileReader();
       reader.onload = (e: any) => {
@@ -53,6 +59,13 @@ export class EditProductComponent {
       };
       reader.readAsDataURL(file);
     }
+  }
+
+  onFileLink(event: any) { //carga a travez de link
+    const newValue: string = event.target.value;
+    if (newValue) {
+      this.imageSrc = newValue
+    };
   }
 
 }

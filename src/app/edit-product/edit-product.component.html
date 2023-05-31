@@ -1,12 +1,23 @@
 <div class="div" *ngIf="loading; else elseDiv">
   <div>
     <div>
-      <img [src]="productoId?.imagen" class="img" />
+      <div class="actual">
+        <img [src]="productoId?.imagen" class="img" />
+        <i class="bi bi-pencil-fill icon" (click)="editImagen()"></i>
+        <div *ngIf="editImage">
+          <button>Subir imagen</button>
+          <button>Ingresar link</button>
 
-      <img [src]="imageSrc" alt="imgCargada" class="img" />
-      <input type="file" (change)="onFileSelected($event)" />
+          <input type="file" (change)="onFileSelected($event)" />
 
-      <h3 class="nombre edits">Nombre: {{ productoId?.nombre }}</h3>
+          <input type="text" (change)="onFileLink($event)" />
+          <button>cARGAR</button>
+          <img [src]="imageSrc" alt="imgCargada" class="img" />
+        </div>
+      </div>
+      <div class="actual">
+        <h3 class="nombre edits">Nombre: {{ productoId?.nombre }}</h3>
+      </div>
       <h3 class="categoria edits">Categoria: {{ productoId?.categoria }}</h3>
       <h3 class="edits">Detalles: {{ productoId?.detalles }}</h3>
       <h3 class="precio edits">Precio: $ {{ productoId?.precio }}</h3>
