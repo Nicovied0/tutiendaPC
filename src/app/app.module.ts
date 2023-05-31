@@ -23,6 +23,9 @@ import { LoginComponent } from './login/login.component';
 import { ProductsEditComponent } from './products-edit/products-edit.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
 
+
+import { CarouselModule } from 'ngx-bootstrap/carousel';
+import { OfertComponent } from './ofert/ofert.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,12 +45,14 @@ import { EditProductComponent } from './edit-product/edit-product.component';
     LoginComponent,
     ProductsEditComponent,
     EditProductComponent,
+    OfertComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CarouselModule.forRoot()
   ],
   providers: [LoginService],
   bootstrap: [AppComponent]
