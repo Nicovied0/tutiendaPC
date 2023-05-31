@@ -7,6 +7,7 @@ import { ProductosService } from '../productos/productos.service';
   templateUrl: './edit-product.component.html',
   styleUrls: ['./edit-product.component.css']
 })
+
 export class EditProductComponent {
 
   @Input() producto: any;
