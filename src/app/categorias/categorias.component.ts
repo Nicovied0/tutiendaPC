@@ -12,11 +12,6 @@ export class CategoriasComponent {
   public carga = false
   public categoriaActual: string | null = null
 
-  getProcesadores() {
-    // this.productosService.
-  }
-  getGabinetes() { }
-  getPlacass() { }
 
   async getMemorias() {
     console.log('ejecute menorias')
@@ -24,5 +19,24 @@ export class CategoriasComponent {
     this.carga = true
     this.categoriaActual = 'Memorias RAM'
   }
+
+  async getProcesadores() {
+    this.productos = await this.productosService.getProcesadores()
+    this.carga = true
+    this.categoriaActual = 'Procesadores'
+  }
+  
+  async getPlacas() {
+    this.productos = await this.productosService.getPlacas()
+    this.carga = true
+    this.categoriaActual = 'Placas de video'
+  }
+
+  async getGabinetes() {
+    this.productos = await this.productosService.getGabinetes()
+    this.carga = true
+    this.categoriaActual = 'Placas de video'
+  }
+
 
 }

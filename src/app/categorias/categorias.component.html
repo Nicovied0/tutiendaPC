@@ -1,8 +1,8 @@
 <div class="container">
   <div class="filtros">
     <div>
-      <h2 *ngIf="!categoriaActual">Mostrar por categorias</h2>
-      <h2>{{ categoriaActual }}</h2>
+      <h2 *ngIf="!categoriaActual">Mostrar productos por categorias</h2>
+      <h2 style="color: #3f51b5; font-weight: bolder">{{ categoriaActual }}</h2>
     </div>
     <div class="divButtons">
       <button class="btn btn-primary m-3" (click)="getMemorias()">
@@ -11,7 +11,7 @@
       <button class="btn btn-primary m-3" (click)="getProcesadores()">
         Procesadores
       </button>
-      <button class="btn btn-primary m-3" (click)="getPlacass()">
+      <button class="btn btn-primary m-3" (click)="getPlacas()">
         Placas de Video
       </button>
       <button class="btn btn-primary m-3" (click)="getGabinetes()">
@@ -28,7 +28,7 @@
       <div>
         <h2 class="nombre">{{ producto.nombre }}</h2>
         <p>{{ producto.detalles }}</p>
-        <h3 class="precio">$ {{ producto.precio }}</h3>
+        <h3 class="precio" style="color: #3f51b5">$ {{ producto.precio }}</h3>
       </div>
       <div>
         <!-- <button class="button" (click)="verDetalle(producto.index)">
