@@ -1,0 +1,66 @@
+.container {
+  width: 100%;
+  min-height: 60vh;
+}
+
+.div2 {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+
+}
+
+.filtros {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.div {
+  display: flex;
+  flex-direction: column;
+  max-width: 345px;
+  height: 549px;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  padding: 2rem;
+  margin: 2rem;
+}
+
+.img {
+  width: 100%;
+  max-height: 30rem;
+}
+
+.precio {
+  font-size: 35px;
+  padding-top: 15px;
+}
+
+.nombre {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.button {
+  color: #fff;
+  background-color: #3f51b5;
+  padding: 0.4rem 1.6rem;
+}
+
+.div:hover {
+  scale: 1.1;
+  transition: 0.5s
+}
+
+.divDodge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
