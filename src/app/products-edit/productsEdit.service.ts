@@ -8,7 +8,7 @@ export class ProductosService {
   constructor(private http: HttpClient) { }
 
   getProductos() {
-    return this.http.get<any>('https://tu-tienda-pc-default-rtdb.firebaseio.com/.json').pipe(
+    return this.http.get<any>('https://tu-tienda-pc-default-rtdb.firebaseio.com/productos.json').pipe(
       map((productos: any[]) => {
         return productos.map((producto, index) => ({ ...producto, index: index + 1 }));
       })
@@ -17,7 +17,7 @@ export class ProductosService {
 
 
   getProductoById(id: string) {
-    const url = `https://tu-tienda-pc-default-rtdb.firebaseio.com/${id}.json`;
+    const url = `https://tu-tienda-pc-default-rtdb.firebaseio.com/productos${id}.json`;
     return this.http.get<any>(url).toPromise();
   }
 

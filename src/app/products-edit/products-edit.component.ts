@@ -22,9 +22,9 @@ export class ProductsEditComponent {
     })
   }
 
-  Edit(index: number) {
-    console.log(index)
-    this.router.navigate(['/perfil/administrador/producto', index]);
+  Edit(id: number) {
+    console.log(id)
+    this.router.navigate(['/perfil/administrador/producto', id]);
   }
 
 }

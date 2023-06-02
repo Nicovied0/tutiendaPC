@@ -37,8 +37,8 @@ export class ProductosComponent {
   }
 
 
-  verDetalle(index: number) {
-    console.log(index)
-    this.router.navigate(['/producto', index]);
+  verDetalle(id: number) {
+    console.log(id)
+    this.router.navigate(['/producto', id]);
   }
 }

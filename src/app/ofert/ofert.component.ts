@@ -30,5 +30,11 @@ export class OfertComponent {
       });
   }
 
+  goProducto(index: number) {
+    console.log(this.productos)
+    console.log("soy yo")
+    console.log(index)
+    this.router.navigate(['/producto', index]);
+  }
 
 }

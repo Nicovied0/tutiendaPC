@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 
 import { ProductosService } from '../productos/productos.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-categorias',
   templateUrl: './categorias.component.html',
   styleUrls: ['./categorias.component.css']
 })
 export class CategoriasComponent {
-  constructor(private productosService: ProductosService) { }
+  constructor(private productosService: ProductosService, private router: Router) { }
   public productos: any = []
   public carga = false
   public categoriaActual: string | null = null
@@ -38,5 +39,7 @@ export class CategoriasComponent {
     this.categoriaActual = 'Gabinetes'
   }
 
-
+  verDetalle(id: number) {
+    this.router.navigate(['/producto', id]);
+  }
 }

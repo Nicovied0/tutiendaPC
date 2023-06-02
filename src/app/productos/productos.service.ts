@@ -8,26 +8,21 @@ export class ProductosService {
   constructor(private http: HttpClient) { }
 
   getProductos() {
-    return this.http.get<any>('https://tu-tienda-pc-default-rtdb.firebaseio.com/.json').pipe(
-      map((productos: any[]) => {
-        return productos.map((producto, index) => ({ ...producto, index: index + 1 }));
-      })
-    ).toPromise();
+    return this.http.get<any>('https://tu-tienda-pc-default-rtdb.firebaseio.com/productos.json').toPromise();
   }
 
 
   getProductoById(id: string) {
-    const url = `https://tu-tienda-pc-default-rtdb.firebaseio.com/${id}.json`;
+    const url = `https://tu-tienda-pc-default-rtdb.firebaseio.com/productos/${id}.json`;
     return this.http.get<any>(url).toPromise();
   }
 
   async getMemorias() {
     try {
-      const productos = await this.http.get<any[]>('https://tu-tienda-pc-default-rtdb.firebaseio.com/.json').toPromise();
+      const productos = await this.http.get<any[]>('https://tu-tienda-pc-default-rtdb.firebaseio.com/productos.json').toPromise();
 
       if (productos) {
         const productosFilter = productos
-          .map((producto: any, index: number) => ({ ...producto, index: index + 1 }))
           .filter((producto: any) => producto.categoria === "Memorias RAM");
 
         console.log("funcionó");
@@ -43,11 +38,10 @@ export class ProductosService {
 
   async getProcesadores() {
     try {
-      const productos = await this.http.get<any[]>('https://tu-tienda-pc-default-rtdb.firebaseio.com/.json').toPromise();
+      const productos = await this.http.get<any[]>('https://tu-tienda-pc-default-rtdb.firebaseio.com/productos.json').toPromise();
 
       if (productos) {
         const productosFilter = productos
-          .map((producto: any, index: number) => ({ ...producto, index: index + 1 }))
           .filter((producto: any) => producto.categoria === "Procesadores");
         return productosFilter;
       }
@@ -60,11 +54,10 @@ export class ProductosService {
 
   async getPlacas() {
     try {
-      const productos = await this.http.get<any[]>('https://tu-tienda-pc-default-rtdb.firebaseio.com/.json').toPromise();
+      const productos = await this.http.get<any[]>('https://tu-tienda-pc-default-rtdb.firebaseio.com/productos.json').toPromise();
 
       if (productos) {
         const productosFilter = productos
-          .map((producto: any, index: number) => ({ ...producto, index: index + 1 }))
           .filter((producto: any) => producto.categoria === "Placas de Video");
         return productosFilter;
       }
@@ -76,11 +69,10 @@ export class ProductosService {
   }
   async getGabinetes() {
     try {
-      const productos = await this.http.get<any[]>('https://tu-tienda-pc-default-rtdb.firebaseio.com/.json').toPromise();
+      const productos = await this.http.get<any[]>('https://tu-tienda-pc-default-rtdb.firebaseio.com/productos.json').toPromise();
 
       if (productos) {
         const productosFilter = productos
-          .map((producto: any, index: number) => ({ ...producto, index: index + 1 }))
           .filter((producto: any) => producto.categoria === "Gabinetes");
         return productosFilter;
       }
@@ -96,7 +88,7 @@ export class ProductosService {
 
   async getOferta(): Promise<any[]> {
     try {
-      const response = await this.http.get<any[]>('https://tu-tienda-pc-default-rtdb.firebaseio.com/.json').toPromise();
+      const response = await this.http.get<any[]>('https://tu-tienda-pc-default-rtdb.firebaseio.com/productos.json').toPromise();
 
       if (response) {
         const productos = Object.values(response); // Obtén los valores de la respuesta como un arreglo de productos
