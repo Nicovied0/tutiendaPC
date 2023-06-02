@@ -30,11 +30,10 @@ export class OfertComponent {
       });
   }
 
-  goProducto(index: number) {
+  goProducto(id: string) {
     console.log(this.productos)
-    console.log("soy yo")
-    console.log(index)
-    this.router.navigate(['/producto', index]);
+
+    this.router.navigate(['/producto', id]);
   }
 
 }
