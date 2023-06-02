@@ -16,12 +16,15 @@
 }
 
 .div3 {
-  display: flex;
   margin: 3rem;
+  width: 100%;
 }
 
 .div4 {
   display: flex;
   justify-content: space-around;
   width: 30rem;
+}
+.opertComponent{
+  display: flex;
 }

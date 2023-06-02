@@ -1,10 +1,32 @@
-<div class="carousel-wrapper" [ngStyle]="carouselStyles">
-  <div class="slide" *ngFor="let productoGroup of productosGrouped">
-    <div class="product" *ngFor="let producto of productoGroup">
-      <img [src]="producto.imagen" class="img" />
-      <h2 class="nombre">{{ producto.nombre }}</h2>
-      <h3 class="precio">$ {{ producto.precio }}</h3>
-      <h4>20% OFF</h4>
+<div class="div">
+  <div class="titulo">
+    <h2>Ofertas</h2>
+  </div>
+  <div class="carousel-container">
+    <div class="carousel-track">
+      <ng-container *ngFor="let producto of productos">
+        <div class="carousel-item">
+          <div class="product">
+            <h5 class="descuento">20% OFF</h5>
+            <img [src]="producto.imagen" alt="Producto" class="img" />
+            <h3 class="nombre">{{ producto.nombre }}</h3>
+            <h4 class="precio">$ {{ producto.precio }}</h4>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container *ngFor="let producto of productos2">
+        <div class="carousel-item">
+          <div class="product">
+            <h5 class="descuento">20% OFF</h5>
+            <img [src]="producto.imagen" alt="Producto" class="img" />
+            <h3 class="nombre">{{ producto.nombre }}</h3>
+            <div>
+              <h4 class="precio">$ {{ producto.precio }}</h4>
+              <button>Ver Producto</button>
+            </div>
+          </div>
+        </div>
+      </ng-container>
     </div>
   </div>
 </div>
