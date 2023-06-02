@@ -27,6 +27,10 @@
 .butonVer {
   font-size: 1rem;
   margin: 0.4rem;
+  border-radius: 0.7rem;
+  color: #fff;
+  background-color: #3f51b5;
+  padding: 0.5rem 1.3rem;
 }
 
 .precio {
