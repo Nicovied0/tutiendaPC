@@ -11,10 +11,11 @@
 
 .product {
   display: flex;
-  background-color: gray;
   height: 25rem;
   flex-direction: column;
   align-items: center;
+  padding: 1.3rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
 }
 
 .img {
