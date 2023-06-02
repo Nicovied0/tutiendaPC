@@ -16,6 +16,26 @@
   align-items: center;
   padding: 1.3rem;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+  justify-content: space-between;
+
+}
+
+.divPrecioProduct {
+  display: flex;
+}
+
+.butonVer {
+  font-size: 1rem;
+  margin: 0.4rem;
+}
+
+.precio {
+  margin: 0.4rem;
+}
+
+.nombre {
+  font-size: 1.2rem;
+
 }
 
 .img {
