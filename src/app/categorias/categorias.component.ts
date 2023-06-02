@@ -25,7 +25,7 @@ export class CategoriasComponent {
     this.carga = true
     this.categoriaActual = 'Procesadores'
   }
-  
+
   async getPlacas() {
     this.productos = await this.productosService.getPlacas()
     this.carga = true
@@ -35,7 +35,7 @@ export class CategoriasComponent {
   async getGabinetes() {
     this.productos = await this.productosService.getGabinetes()
     this.carga = true
-    this.categoriaActual = 'Placas de video'
+    this.categoriaActual = 'Gabinetes'
   }
 
 

@@ -54,7 +54,7 @@ import { CategoriasComponent } from './categorias/categorias.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    CarouselModule.forRoot()
+    CarouselModule.forRoot(),
   ],
   providers: [LoginService],
   bootstrap: [AppComponent]

@@ -1,0 +1,59 @@
+.carousel-container {
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-wrapper {
+  display: flex;
+  width: max-content;
+  animation: carousel-animation 10s infinite linear;
+}
+
+.slide {
+  margin-right: 20px;
+}
+
+@keyframes carousel-animation {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.carousel-wrapper {
+  overflow: hidden;
+}
+
+.slide {
+  display: flex;
+}
+
+.product {
+  flex: 0 0 auto;
+  padding: 0 10px;
+  text-align: center;
+}
+
+.img {
+  width: 200px;
+  height: 200px;
+}
+
+.nombre {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.precio {
+  font-size: 14px;
+  color: #999;
+}
+
+h4 {
+  font-size: 12px;
+  color: green;
+  margin-top: 5px;
+}

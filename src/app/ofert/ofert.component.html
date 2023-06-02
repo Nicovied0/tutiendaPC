@@ -1,1 +1,10 @@
-<p>ofert works!</p>
+<div class="carousel-wrapper" [ngStyle]="carouselStyles">
+  <div class="slide" *ngFor="let productoGroup of productosGrouped">
+    <div class="product" *ngFor="let producto of productoGroup">
+      <img [src]="producto.imagen" class="img" />
+      <h2 class="nombre">{{ producto.nombre }}</h2>
+      <h3 class="precio">$ {{ producto.precio }}</h3>
+      <h4>20% OFF</h4>
+    </div>
+  </div>
+</div>

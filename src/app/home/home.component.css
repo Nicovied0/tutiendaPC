@@ -7,13 +7,21 @@
 }
 
 .div2 {
+  background: radial-gradient(ellipse at center, #000000 0, #232323 100%);
+  width: 100%;
+  padding: 2rem;
   display: flex;
-  width: 35rem;
   align-items: center;
-  margin: 2rem;
-  justify-content: space-evenly;
+  justify-content: center;
 }
-.div3{
+
+.div3 {
   display: flex;
   margin: 3rem;
+}
+
+.div4 {
+  display: flex;
+  justify-content: space-around;
+  width: 30rem;
 }

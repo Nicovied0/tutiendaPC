@@ -94,6 +94,24 @@ export class ProductosService {
 
 
 
+  async getOferta() {
+    try {
+      const productos = await this.http.get<any[]>('https://tu-tienda-pc-default-rtdb.firebaseio.com/.json').toPromise();
+
+      if (productos) {
+        const productosOferta = productos.sort(() => Math.random() - 0.5).slice(0, 7);
+
+        console.log("Oferta:");
+        console.log(productosOferta);
+        return productosOferta;
+      }
+
+      return []; // Valor de retorno predeterminado si productos es null o undefined
+    } catch (error) {
+      console.error("Ocurrió un error:", error);
+      return []; // Valor de retorno predeterminado en caso de error
+    }
+  }
 
 
 }
