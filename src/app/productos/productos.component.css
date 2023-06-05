@@ -60,11 +60,12 @@
 }
 
 .divOrder {
-  display: flex
+  display: flex;
+  padding: 1rem;
 }
 
-.selectInput {
-  margin: 0 1rem
+.selectInput {  
+  margin: 0 1rem;
 }
 
 .show-nombre {

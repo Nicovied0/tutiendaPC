@@ -1,12 +1,28 @@
 .div {
   display: flex;
   flex-direction: column;
-  margin: 5rem;
+  padding: 5rem;
   max-width: 100%;
-  height: 80vh;
+  min-height: 80vh;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: center;
+  background-color: white;
+  border-radius: 1rem;
+}
 
+.contenedor {
+  padding: 5rem;
+  padding: 5rem 10rem;
+}
+
+.agregado {
+  padding: 1rem;
+}
+
+.buttonsCarrito {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .iClass {

@@ -1,43 +1,46 @@
-<div class="div" *ngIf="loading; else elseDiv">
-  <div>
-    <h3 class="categoria">{{ productoId?.categoria }}</h3>
+<div class="contenedor">
+  <div class="div" *ngIf="loading; else elseDiv">
+    <div>
+      <h3 class="categoria">{{ productoId?.categoria }}</h3>
 
-    <img [src]="productoId?.imagen" class="img" />
-  </div>
-  <div>
-    <h2 class="nombre">{{ productoId?.nombre }}</h2>
-    <p>{{ productoId?.detalles }}</p>
-    <h3 class="precio">$ {{ productoId?.precio }}</h3>
-  </div>
-  <div class="notification">
-    <div class="icon-container">
-      <i class="bi bi-shield-fill-check iClass icon"></i>
-      <div class="text">GARANTIA POR 24 MESES</div>
+      <img [src]="productoId?.imagen" class="img" />
     </div>
-    <div class="icon-container">
-      <i class="bi bi-check-lg iClass icon"></i>
-      <div class="text">STOCK DISPONIBLE</div>
+    <div>
+      <h2 class="nombre">{{ productoId?.nombre }}</h2>
+      <p>{{ productoId?.detalles }}</p>
+      <h3 class="precio">$ {{ productoId?.precio }}</h3>
     </div>
-    <div class="icon-container">
-      <i class="bi bi-truck iClass icon"></i>
-      <div class="text">ENVIO GRATIS A TODO EL PAIS</div>
+    <div class="notification">
+      <div class="icon-container">
+        <i class="bi bi-shield-fill-check iClass icon"></i>
+        <div class="text">GARANTIA POR 24 MESES</div>
+      </div>
+      <div class="icon-container">
+        <i class="bi bi-check-lg iClass icon"></i>
+        <div class="text">STOCK DISPONIBLE</div>
+      </div>
+      <div class="icon-container">
+        <i class="bi bi-truck iClass icon"></i>
+        <div class="text">ENVIO GRATIS A TODO EL PAIS</div>
+      </div>
     </div>
-  </div>
-  <div>
-    <button
-      class="button"
-      (click)="agregarAlCarrito()"
-      *ngIf="!carritoAgregado"
-    >
-      Agregar al carrito
-    </button>
-    <span>Ya lo agregaste a tu carrito</span>
-    <button class="button" (click)="goCarrito()" *ngIf="carritoAgregado">
-      Ver Carrito
-    </button>
+    <div class="buttonsCarrito">
+      <button
+        class="button"
+        (click)="agregarAlCarrito()"
+        *ngIf="!carritoAgregado"
+      >
+        Agregar al carrito
+      </button>
+      <span *ngIf="carritoAgregado" class="agregado"
+        >Ya lo agregaste a tu carrito</span
+      >
+      <button class="button" (click)="goCarrito()" *ngIf="carritoAgregado">
+        Ver Carrito
+      </button>
+    </div>
   </div>
 </div>
-
 <ng-template #elseDiv>
   <app-loader></app-loader>
 </ng-template>
