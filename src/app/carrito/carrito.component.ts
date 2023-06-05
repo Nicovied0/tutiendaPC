@@ -35,7 +35,7 @@ export class CarritoComponent {
     console.log(this.precioTotal);
   }
   comprar() {
-
+    
   }
 
 

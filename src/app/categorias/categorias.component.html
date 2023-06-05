@@ -20,24 +20,27 @@
     </div>
   </div>
   <div class="div2" *ngIf="carga; else elseDiv">
-    <!-- <div *ngIf="carga; else elseDiv"> -->
-    <div class="div" *ngFor="let producto of productos">
-      <div>
-        <img [src]="producto.imagen" class="img" />
+    <div
+      class="div"
+      *ngFor="let producto of productos; let i = index"
+      (mouseenter)="onMouseEnter(i)"
+      (mouseleave)="onMouseLeave(i)"
+    >
+      <div (click)="verDetalle(producto.id)">
+        <div>
+          <img [src]="producto.imagen" class="img" />
+        </div>
+        <div>
+          <h3 class="precio">$ {{ producto.precio }}</h3>
+          <p class="parrafo">Envio Gratis</p>
+          <h2 class="nombre" [ngClass]="{ 'show-nombre': hoverIndex === i }">
+            {{ hoverIndex === i ? producto.nombre : "" }}
+          </h2>
+        </div>
       </div>
-      <div>
-        <h2 class="nombre">{{ producto.nombre }}</h2>
-        <p>{{ producto.detalles }}</p>
-        <h3 class="precio" style="color: #3f51b5">$ {{ producto.precio }}</h3>
-      </div>
-      <div>
-        <button class="button" (click)="verDetalle(producto.id)">
-          Ver Producto
-        </button>
-      </div>
-      <!-- </div> -->
     </div>
   </div>
+
   <ng-template #elseDiv class="div2">
     <div class="divDodge">
       <h2>Elige una categoria</h2>
