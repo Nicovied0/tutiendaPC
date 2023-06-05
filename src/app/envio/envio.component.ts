@@ -6,16 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./envio.component.css']
 })
 export class EnvioComponent {
-  public loading = false
+  public loading = true
+  public showLoader: boolean = true;
 
-  ngOnInit() {
-    this.funCargando()
-  }
+
+  public iframeLoaded: boolean = false;
+
   funCargando() {
-    console.log("hola")
-    setTimeout(() => {
-      this.loading = true
-    }, 3000);
+    this.loading = true;
   }
 
+  onIframeLoad() {
+    this.iframeLoaded = true;
+    this.loading = false;
+  }
 }

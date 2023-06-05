@@ -13,7 +13,7 @@ import { Router } from '@angular/router';
 
 export class HomeComponent implements OnInit {
   constructor(private router: Router) { }
-  public imagen : string = 'https://cloudfront-us-east-1.images.arcpublishing.com/infobae/BLZJHTB27ZHUPKK3A7GXTMIEQA.jpg';
+  public imagen: string = 'https://cloudfront-us-east-1.images.arcpublishing.com/infobae/BLZJHTB27ZHUPKK3A7GXTMIEQA.jpg';
   lastVisit: Date | null = null;
 
 

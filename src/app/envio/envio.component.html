@@ -1,26 +1,40 @@
-<div>
-    <div>
-        <h2>Poseemos envios a todo el pais</h2>
-        <div class="notification">
-            <div class="icon-container">
-                <i class="bi bi-shield-fill-check iClass icon" style="color: rgb(76, 175, 80)"></i>
-                <div class="text">GARANTIA POR 24 MESES</div>
-            </div>
-            <div class="icon-container">
-                <i class="bi bi-truck iClass icon" style="color: rgb(76, 175, 80);"></i>
-                <div class="text">ENVIO GRATIS A TODO EL PAIS</div>
-            </div>
-        </div>
-    </div>
-    <div *ngIf="loading; else elseDiv">
+<div class="container">
+  <div class="divnotification">
+    <div class="notification">
+      <div class="icon-container">
+        <i
+          class="bi bi-shield-fill-check iClass icon"
+          style="color: rgb(76, 175, 80)"
+        ></i>
 
-        <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1160064.7816291938!2d-58.432625339649825!3d-36.572035310921635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959bf35ccc55f029%3A0x3c13486485dfdfdc!2sGral%20Lavalle%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1685966893900!5m2!1ses!2sar"
-            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
-
+        <div class="text">GARANTIA POR 24 MESES</div>
+      </div>
+      <div class="icon-container">
+        <i class="bi bi-truck iClass icon" style="color: rgb(76, 175, 80)"></i>
+        <div class="text">ENVIO GRATIS A TODO EL PAIS</div>
+      </div>
+      <div class="icon-container">
+        <i class="iClass icon">
+          <img src="../../assets/mercadopago.png" alt="mercado-pago" />
+        </i>
+        <div class="text">ENVIO GRATIS A TODO EL PAIS</div>
+      </div>
     </div>
-    <ng-template #elseDiv>
-        <app-loader></app-loader>
-    </ng-template>
+  </div>
+  <div class="divIframe">
+    <h2 class="titles">Nos Encontramos en BA</h2>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1160064.7816291938!2d-58.432625339649825!3d-36.572035310921635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959bf35ccc55f029%3A0x3c13486485dfdfdc!2sGral%20Lavalle%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1685966893900!5m2!1ses!2sar"
+      width="600"
+      height="450"
+      style="border: 0"
+      allowfullscreen=""
+      loading="lazy"
+      referrerpolicy="no-referrer-when-downgrade"
+      (load)="onIframeLoad()"
+    ></iframe>
+  </div>
+  <div *ngIf="loading || !iframeLoaded">
+    <app-loader></app-loader>
+  </div>
 </div>
