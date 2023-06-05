@@ -24,7 +24,17 @@
     </div>
   </div>
   <div>
-    <button class="button">Agregar al carrito</button>
+    <button
+      class="button"
+      (click)="agregarAlCarrito()"
+      *ngIf="!carritoAgregado"
+    >
+      Agregar al carrito
+    </button>
+    <span>Ya lo agregaste a tu carrito</span>
+    <button class="button" (click)="goCarrito()" *ngIf="carritoAgregado">
+      Ver Carrito
+    </button>
   </div>
 </div>
 
