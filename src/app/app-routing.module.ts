@@ -8,6 +8,7 @@ import { PanelAdminComponent } from './panel-admin/panel-admin.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { CategoriasComponent } from './categorias/categorias.component';
 import { EnvioComponent } from './envio/envio.component'
+import { CarritoComponent } from './carrito/carrito.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -17,7 +18,8 @@ const routes: Routes = [
   { path: 'perfil/administrador', component: PanelAdminComponent },
   { path: 'perfil/administrador/producto/:id', component: EditProductComponent },
   { path: 'categorias', component: CategoriasComponent },
-  { path: 'formasDeEnvio', component:  EnvioComponent }
+  { path: 'formasDeEnvio', component: EnvioComponent },
+  { path: 'carrito', component: CarritoComponent }
 ];
 
 @NgModule({

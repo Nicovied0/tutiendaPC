@@ -68,6 +68,7 @@ export class ProductoComponent {
       this.carritoAgregado = true;
     }
   }
+
   goCarrito() {
     this.router.navigate(['/carrito']);
   }

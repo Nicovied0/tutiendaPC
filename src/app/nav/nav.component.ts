@@ -16,4 +16,7 @@ export class NavComponent {
   goHome(){
     this.router.navigate(['/']);
   }
+  goCarrito(){
+    this.router.navigate(['/carrito']);
+  }
 }

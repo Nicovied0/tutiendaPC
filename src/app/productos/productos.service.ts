@@ -1,9 +1,9 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { map } from "rxjs/operators";
 
 @Injectable({ providedIn: 'root' })
 export class ProductosService {
+  public carrito: any
 
   constructor(private http: HttpClient) { }
 
@@ -108,5 +108,16 @@ export class ProductosService {
   }
 
 
+  getProductoCarrito(): any[] {
+    const carritoActual = localStorage.getItem('carrito');
+    if (carritoActual) {
+      this.carrito = JSON.parse(carritoActual);
+    } else {
+      this.carrito = [];
+    }
+    console.log("soy el carrito");
+    console.log(this.carrito);
+    return this.carrito;
+  }
 
 }
