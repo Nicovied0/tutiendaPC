@@ -6,5 +6,16 @@ import { Component } from '@angular/core';
   styleUrls: ['./envio.component.css']
 })
 export class EnvioComponent {
+  public loading = false
+
+  ngOnInit() {
+    this.funCargando()
+  }
+  funCargando() {
+    console.log("hola")
+    setTimeout(() => {
+      this.loading = true
+    }, 3000);
+  }
 
 }

@@ -12,8 +12,15 @@
             </div>
         </div>
     </div>
-    <iframe
-        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1160064.7816291938!2d-58.432625339649825!3d-36.572035310921635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959bf35ccc55f029%3A0x3c13486485dfdfdc!2sGral%20Lavalle%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1685966893900!5m2!1ses!2sar"
-        width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-        referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <div *ngIf="loading; else elseDiv">
+
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1160064.7816291938!2d-58.432625339649825!3d-36.572035310921635!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x959bf35ccc55f029%3A0x3c13486485dfdfdc!2sGral%20Lavalle%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1685966893900!5m2!1ses!2sar"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+    </div>
+    <ng-template #elseDiv>
+        <app-loader></app-loader>
+    </ng-template>
 </div>

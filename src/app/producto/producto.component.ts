@@ -26,13 +26,11 @@ export class ProductoComponent {
   getProductById(id: string) {
     this.productosService.getProductoById(id)
       .then(producto => {
-        // Aquí puedes hacer lo que necesites con los detalles del producto
         console.log(producto);
         this.productoId = producto
         this.loading = true
       })
       .catch(error => {
-        // Manejo de errores
         console.error(error);
       });
   }
