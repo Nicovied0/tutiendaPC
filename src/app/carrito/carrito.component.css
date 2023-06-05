@@ -1,0 +1,126 @@
+.container {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  min-height: 80vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.div2 {
+  padding: 1rem;
+
+}
+
+.div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.img {
+  width: 100%;
+  max-height: 60px;
+}
+
+.divNombre {
+  color: #1a1a1a;
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.divPrecio {
+  display: flex;
+  padding: 0 3rem;
+  flex-direction: row;
+  width: 14rem;
+}
+
+.divImgNombre {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0 4rem;
+  width: 40rem;
+  min-width: 40rem;
+}
+
+.nombre {
+  color: #1a1a1a;
+  display: inline-block;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-size: larger;
+}
+
+
+
+.contenedor {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem;
+}
+
+.div {
+  border-bottom: 1px solid rgba(0, 0, 0, .1);
+
+}
+
+.btncontador {
+  font-weight: 700;
+  font-size: 1.5rem;
+  color: blie;
+  color: #3483fa;
+  cursor: pointer;
+  font-family: math;
+}
+
+.divCantidad {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-around;
+  border: solid 1px gray;
+  padding: 0.4rem;
+  width: 7rem;
+}
+
+.divPrecioTotal {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.divPrecioTotal2 {
+  display: flex;
+  padding: 0 3rem;
+  padding: 2rem;
+  flex-direction: row;
+  width: 50rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.PrecioTotal {
+  display: flex;
+}
+
+.PrecioTotalh2 {
+  margin: 0.5rem;
+}
+
+.divCarritoVACIO {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

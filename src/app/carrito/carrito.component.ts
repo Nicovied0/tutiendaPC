@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ProductosService } from '../productos/productos.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-carrito',
@@ -12,7 +13,7 @@ export class CarritoComponent {
   public carritoVacio: boolean = true
   public precioTotal: number = 0
 
-  constructor(private productosService: ProductosService) { }
+  constructor(private productosService: ProductosService, private router: Router) { }
 
   ngOnInit() {
     this.productos = this.productosService.getProductoCarrito();
@@ -35,8 +36,10 @@ export class CarritoComponent {
     console.log(this.precioTotal);
   }
   comprar() {
-    
+
   }
 
-
+  goProductos() {
+    this.router.navigate(['/productos'])
+  }
 }
