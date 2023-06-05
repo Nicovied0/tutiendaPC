@@ -63,3 +63,10 @@
   scale: 1.1;
   transition: 0.5s
 }
+
+.divOrder {
+  display: flex
+}
+.selectInput{
+  margin: 0 1rem
+}

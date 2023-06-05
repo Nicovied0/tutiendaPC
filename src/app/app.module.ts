@@ -27,6 +27,7 @@ import { EditProductComponent } from './edit-product/edit-product.component';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { OfertComponent } from './ofert/ofert.component';
 import { CategoriasComponent } from './categorias/categorias.component';
+import { EnvioComponent } from './envio/envio.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,6 +49,7 @@ import { CategoriasComponent } from './categorias/categorias.component';
     EditProductComponent,
     OfertComponent,
     CategoriasComponent,
+    EnvioComponent,
   ],
   imports: [
     BrowserModule,

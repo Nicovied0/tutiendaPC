@@ -2,16 +2,20 @@ import { Component, OnInit } from '@angular/core';
 import Swal from 'sweetalert2';
 import { Router } from '@angular/router';
 
+
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
+
+
 export class HomeComponent implements OnInit {
-  public image = 'https://cloudfront-us-east-1.images.arcpublishing.com/infobae/BLZJHTB27ZHUPKK3A7GXTMIEQA.jpg';
+  constructor(private router: Router) { }
+  public imagen : string = 'https://cloudfront-us-east-1.images.arcpublishing.com/infobae/BLZJHTB27ZHUPKK3A7GXTMIEQA.jpg';
   lastVisit: Date | null = null;
 
-  constructor(private router: Router) { }
 
   goProductos() {
     this.router.navigate(['/productos']);
@@ -19,6 +23,9 @@ export class HomeComponent implements OnInit {
 
   goCategorias() {
     this.router.navigate(['/categorias']);
+  }
+  goEnvio() {
+    this.router.navigate(['/formasDeEnvio']);
   }
 
   ngOnInit() {
@@ -42,8 +49,9 @@ export class HomeComponent implements OnInit {
       Swal.fire({
         title: 'El desarrollador está trabajando en nuevos cambios en la web!',
         text: 'Pueden surgir errores!',
-        imageUrl: this.image,
-        confirmButtonText: 'Continuar'
+        imageUrl: this.imagen,
+        confirmButtonText: 'Continuar',
+        imageHeight: 150
       });
 
       // Actualizar la fecha de la última visita en localStorage

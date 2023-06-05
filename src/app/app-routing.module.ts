@@ -15,7 +15,9 @@ const routes: Routes = [
   { path: 'perfil', component: ProfileComponent },
   { path: 'perfil/administrador', component: PanelAdminComponent },
   { path: 'perfil/administrador/producto/:id', component: EditProductComponent },
-  { path: 'categorias', component: CategoriasComponent }
+  { path: 'categorias', component: CategoriasComponent },
+  { path: 'formasDeEnvio', component: CategoriasComponent }
+  
 ];
 
 @NgModule({

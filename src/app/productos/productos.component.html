@@ -1,9 +1,9 @@
 <div class="container" *ngIf="loading; else elseDiv">
   <div>
     <h2>Catalogo de productos</h2>
-    <div>
+    <div class="divOrder">
       <h3>Ordenar por</h3>
-      <select (change)="onChangeOrder($event)">
+      <select (change)="onChangeOrder($event)"class="selectInput">
         <option value="x">Relevancia</option>
         <option value="menor">Menor Precio</option>
         <option value="mayor">Mayor Precio</option>

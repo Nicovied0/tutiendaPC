@@ -1,6 +1,9 @@
-.forms{
+.forms {
   display: flex;
   flex-direction: column;
-    align-items: stretch;
-    justify-content: space-around;
+  align-items: stretch;
+  justify-content: space-around;
+  background: #dee2e6;
+  padding: 2rem;
+  border-radius: 1rem;
 }
