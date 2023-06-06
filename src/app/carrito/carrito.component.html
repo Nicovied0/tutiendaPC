@@ -12,12 +12,21 @@
             </div>
           </div>
           <div class="divCantidad">
-            <span class="btncontador">-</span>
-            <h3>1</h3>
-            <span class="btncontador">+</span>
+            <span class="btncontador" (click)="restarCantidad(producto)"
+              >-</span
+            >
+            <h3>{{ producto.cantidad }}</h3>
+            <span class="btncontador" (click)="sumarCantidad(producto)">+</span>
           </div>
+
           <div class="divPrecio">
             <h3 class="precio">$ {{ producto.precio }}</h3>
+          </div>
+          <div class="divBorrar">
+            <i
+              class="bi bi-trash-fill icon icon2"
+              (click)="deleteProductCarrito(producto.id)"
+            ></i>
           </div>
         </div>
 
@@ -43,7 +52,9 @@
       <h2>Tu carrito esta vacio</h2>
       <div class="divCarritoVACIO">
         <h3>Ve a ver Nuestros productos!</h3>
-        <button class="btn btn-primary" (click)="goProductos()">Productos</button>
+        <button class="btn btn-primary" (click)="goProductos()">
+          Productos
+        </button>
       </div>
     </div>
   </ng-template>

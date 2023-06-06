@@ -120,4 +120,18 @@ export class ProductosService {
     return this.carrito;
   }
 
+  deleteProductoCarrito(id: any): any {
+    console.log(id)
+    const carritoActual = this.getProductoCarrito()
+    const index = this.getProductoCarrito().findIndex(objeto => objeto.id === id)
+    if (index !== -1) {
+      carritoActual.splice(index, 1);
+
+    }
+    console.log(id, "soy el id")
+    console.log(carritoActual, "soy el filter")
+    // console.log(filter, "soy el filter")
+    localStorage.setItem('carrito', JSON.stringify(carritoActual));
+  }
+
 }
