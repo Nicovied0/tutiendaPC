@@ -62,6 +62,7 @@ export class CarritoComponent {
 
   deleteProductCarrito(id: any) {
     this.productosService.deleteProductoCarrito(id)
+    window.location.reload()
   }
 
 
