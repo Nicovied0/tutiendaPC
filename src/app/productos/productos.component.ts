@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ProductosService } from './productos.service';
+import { ProductosService } from '../Servicios/productos.service';
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-productos',

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { LoginService } from './login/login.service';
+import { LoginService } from './Servicios/login.service';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';

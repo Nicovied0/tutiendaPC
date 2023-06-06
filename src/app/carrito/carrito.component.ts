@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ProductosService } from '../productos/productos.service';
+import { ProductosService } from '../Servicios/productos.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -36,6 +36,8 @@ export class CarritoComponent {
 
   comprar() {
     // Implementa aquí la lógica para realizar la compra
+    const total = this.precioTotal
+    console.log(total, "soy ese")
   }
 
   goProductos() {

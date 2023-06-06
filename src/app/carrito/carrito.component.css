@@ -44,7 +44,7 @@
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap;
+  white-space: nowrap
 }
 
 .divPrecio {
@@ -53,6 +53,10 @@
   flex-direction: row;
   width: 13rem;
   justify-content: center;
+}
+
+.precio {
+  font-size: x-large;
 }
 
 .divImgNombre {

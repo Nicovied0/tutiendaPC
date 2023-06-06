@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
-import { LoginService } from './login.service';
+import { LoginService } from '../Servicios/login.service';
 import Swal from 'sweetalert2'
 
 
