@@ -28,6 +28,7 @@ import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { OfertComponent } from './ofert/ofert.component';
 import { CategoriasComponent } from './categorias/categorias.component';
 import { EnvioComponent } from './envio/envio.component';
+import { SearchService } from './Servicios/search.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +59,7 @@ import { EnvioComponent } from './envio/envio.component';
     FormsModule,
     CarouselModule.forRoot(),
   ],
-  providers: [LoginService],
+  providers: [LoginService, SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

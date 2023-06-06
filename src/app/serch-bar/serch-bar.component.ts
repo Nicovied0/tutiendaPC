@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { SearchService } from '../Servicios/search.service';
 
 @Component({
   selector: 'app-serch-bar',
@@ -7,4 +8,8 @@ import { Component } from '@angular/core';
 })
 export class SerchBarComponent {
 
+  constructor(private search: SearchService) { }
+  console() {
+    this.search.soyConsole()
+  }
 }
