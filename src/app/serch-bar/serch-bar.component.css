@@ -18,7 +18,17 @@
 }
 
 .search {
-  margin: 0 1rem
+  margin: 0 1rem;
+  font-size: 2rem;
+  background-color: #27368b;
+  color: #fff;
+  padding: 0.7rem 1rem;
+  border-radius: 0.3rem;
+  cursor: pointer;
+}
+
+.search:hover {
+  background-color: #1e2756;
 }
 
 .dropdown {

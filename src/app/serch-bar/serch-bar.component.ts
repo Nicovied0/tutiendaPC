@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { SearchService } from '../Servicios/search.service';
-import { Router } from '@angular/router';
+import { Router, NavigationStart } from '@angular/router';
 
 @Component({
   selector: 'app-serch-bar',
@@ -12,7 +12,14 @@ export class SerchBarComponent {
   public showDropdown: boolean = false;
   public resultados: any[] = [];
 
-  constructor(private search: SearchService, private router: Router) { }
+  constructor(private search: SearchService, private router: Router) {
+    router.events.subscribe(event => {
+      if (event instanceof NavigationStart) {
+        this.showDropdown = false;
+        this.value = ''
+      }
+    });
+  }
 
   searchButton(data: string) {
     this.search.getProductsByName(data).then((resultados) => {
