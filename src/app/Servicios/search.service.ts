@@ -15,7 +15,7 @@ export class SearchService {
         const categoria = producto.categoria.toLowerCase();
         const termino = data.toLowerCase();
         return nombre.includes(termino) || categoria.includes(termino);
-      });
+      }).slice(0, 5); // Limit the results to 5 products
       console.log(filteredProducts, "resultados de búsqueda");
       return filteredProducts;
     } catch (error) {
