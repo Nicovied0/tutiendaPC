@@ -13,18 +13,22 @@ import Swal from 'sweetalert2'
 export class LoginComponent {
   constructor(private loginService: LoginService) { }
 
+  public userLogin = false
 
   login(form: NgForm) {
     const email = form.value.email
     const password = form.value.password
     console.log(email + password)
     this.loginService.login(email, password)
+    this.userLogin = true
   }
+
   consoleToken() {
     console.log(this.loginService.getIdToken())
     console.log(this.loginService.isAuthenticated())
     if (this.loginService.isAuthenticated() === true) {
       // alert('Usted se encuentra logeado')
+      // this.userLogin = true
       Swal.fire({
         title: 'Felicitaciones!',
         text: 'Usted se encuentra logeado',
@@ -41,8 +45,10 @@ export class LoginComponent {
       })
     }
   }
+
   logout() {
     console.log("se deslogeo")
     this.loginService.logout()
+    this.userLogin = false
   }
 }
