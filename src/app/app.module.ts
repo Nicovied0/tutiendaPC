@@ -29,6 +29,7 @@ import { OfertComponent } from './ofert/ofert.component';
 import { CategoriasComponent } from './categorias/categorias.component';
 import { EnvioComponent } from './envio/envio.component';
 import { SearchService } from './Servicios/search.service';
+import { LoginGuardian } from './Servicios/loginGuardian.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,7 +60,7 @@ import { SearchService } from './Servicios/search.service';
     FormsModule,
     CarouselModule.forRoot(),
   ],
-  providers: [LoginService, SearchService],
+  providers: [LoginService, SearchService, LoginGuardian],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

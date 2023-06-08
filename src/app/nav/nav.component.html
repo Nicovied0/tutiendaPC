@@ -23,4 +23,16 @@
     "
     (click)="goProfile()"
   ></i>
+  <i
+  *ngIf="userAdmin"
+    class="bi bi-gear iClass"
+    style="
+      font-size: 2rem;
+      color: #fff;
+      padding: 1rem;
+      cursor: pointer;
+      border-radius: 100%;
+    "
+    (click)="goPanelAdmin()"
+  ></i>
 </nav>

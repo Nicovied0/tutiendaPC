@@ -9,14 +9,15 @@ import { EditProductComponent } from './edit-product/edit-product.component';
 import { CategoriasComponent } from './categorias/categorias.component';
 import { EnvioComponent } from './envio/envio.component'
 import { CarritoComponent } from './carrito/carrito.component';
+import { LoginGuardian } from './Servicios/loginGuardian.service';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'productos', component: ProductosComponent },
   { path: 'producto/:id', component: ProductoComponent },
   { path: 'perfil', component: ProfileComponent },
-  { path: 'perfil/administrador', component: PanelAdminComponent },
-  { path: 'perfil/administrador/producto/:id', component: EditProductComponent },
+  { path: 'perfil/administrador', component: PanelAdminComponent, canActivate: [LoginGuardian] },
+  { path: 'perfil/administrador/producto/:id', component: EditProductComponent, canActivate: [LoginGuardian] },
   { path: 'categorias', component: CategoriasComponent },
   { path: 'formasDeEnvio', component: EnvioComponent },
   { path: 'carrito', component: CarritoComponent }

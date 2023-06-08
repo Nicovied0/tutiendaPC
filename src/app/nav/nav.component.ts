@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { LoginService } from '../Servicios/login.service';
 
 @Component({
   selector: 'app-nav',
@@ -8,15 +9,21 @@ import { Router } from '@angular/router';
 })
 export class NavComponent {
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private loginService: LoginService) { }
+
+  public userAdmin = this.loginService.adminUser()
 
   goProfile() {
     this.router.navigate(['/perfil']);
+    // console.log(this.userAdmin,"soy ese")
   }
-  goHome(){
+  goHome() {
     this.router.navigate(['/']);
   }
-  goCarrito(){
+  goCarrito() {
     this.router.navigate(['/carrito']);
+  }
+  goPanelAdmin() {
+    this.router.navigate(['/perfil/administrador']);
   }
 }

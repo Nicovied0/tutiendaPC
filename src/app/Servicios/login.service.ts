@@ -17,7 +17,7 @@ export class LoginService {
         firebase.auth().currentUser?.getIdToken().then(
           token => {
             this.token = token
-            this.router.navigate(['/'])
+            // this.router.navigate(['/'])
           }
         )
         // handle response
@@ -42,5 +42,22 @@ export class LoginService {
     firebase.auth().signOut().then(() => {
       this.token = null
     })
+  }
+
+  async saveSession(data: any) {
+    const user = localStorage.setItem('usuario', JSON.stringify(data));
+    const usuarioLogeado = JSON.parse(localStorage.getItem('usuario') || '[]')
+
+    console.log(data)
+    console.log(usuarioLogeado.email, "soy este")
+  }
+
+  adminUser() {
+    const usuarioLogeado = JSON.parse(localStorage.getItem('usuario') || '[]')
+
+    if (usuarioLogeado.email === 'userAdmin@gmail.com') {
+      return true
+    }
+    return false
   }
 }

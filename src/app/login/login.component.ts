@@ -18,10 +18,15 @@ export class LoginComponent {
   login(form: NgForm) {
     const email = form.value.email
     const password = form.value.password
+    const data = { email, password }
     console.log(email + password)
-    this.loginService.login(email, password)
     this.userLogin = true
+    console.log(this.userLogin)
+    this.loginService.login(email, password)
+    this.loginService.saveSession(data)
+    // saveSession
   }
+
 
   consoleToken() {
     console.log(this.loginService.getIdToken())
