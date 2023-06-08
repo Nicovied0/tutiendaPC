@@ -11,6 +11,7 @@ export class SerchBarComponent {
   public value: any;
   public showDropdown: boolean = false;
   public resultados: any[] = [];
+  public resultadosNoEncontrados = false
 
   constructor(private search: SearchService, private router: Router) {
     router.events.subscribe(event => {
@@ -25,6 +26,12 @@ export class SerchBarComponent {
     this.search.getProductsByName(data).then((resultados) => {
       this.resultados = resultados;
       this.showDropdown = true;
+      if (this.resultados.length) {
+        this.resultadosNoEncontrados = false
+      } else {
+        this.resultadosNoEncontrados = true
+      }
+      console.log(this.resultadosNoEncontrados)
     });
   }
   goProduct(id: number) {
