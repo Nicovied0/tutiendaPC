@@ -24,6 +24,7 @@ export class LoginComponent {
     console.log(this.userLogin)
     this.loginService.login(email, password)
     this.loginService.saveSession(data)
+    window.location.reload()
     // saveSession
   }
 

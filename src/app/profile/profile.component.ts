@@ -16,12 +16,18 @@ export class ProfileComponent {
     if (this.loginService.isAuthenticated() === true) {
       this.profile = true
     }
+    if (this.loginService.sessionActive()) {
+
+      this.profile = true
+    }
   }
+
   logout() {
     console.log("se deslogeo")
     this.loginService.logout()
     window.location.reload()
   }
+  
   consoleToken() {
     console.log(this.loginService.getIdToken())
     console.log(this.loginService.isAuthenticated())

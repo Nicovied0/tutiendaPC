@@ -42,6 +42,7 @@ export class LoginService {
     firebase.auth().signOut().then(() => {
       this.token = null
     })
+    localStorage.removeItem('usuario')
   }
 
   async saveSession(data: any) {
@@ -50,6 +51,14 @@ export class LoginService {
 
     console.log(data)
     console.log(usuarioLogeado.email, "soy este")
+  }
+
+  sessionActive() {
+    const usuarioLogeado = JSON.parse(localStorage.getItem('usuario') || '[]')
+    if (usuarioLogeado.email) {
+      return true
+    }
+    return false
   }
 
   adminUser() {
