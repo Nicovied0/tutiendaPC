@@ -9,25 +9,28 @@
           <button>Ingresar link</button>
 
           <input type="file" (change)="onFileSelected($event)" />
+          <!-- <input type="file"    [(ngModel)]="productoId.imagen" /> -->
 
-          <input type="text" (change)="onFileLink($event)" />
-          <button>Cargar</button>
+
+          <!-- <input type="text" (change)="onFileLink($event)" /> -->
+          <input type="text" [(ngModel)]="productoId.imagen" />
+          <button (click)="guardarProducto()">Cargar</button>
           <img [src]="imageSrc" alt="imgCargada" class="img" />
         </div>
       </div>
       <div class="actual">
-        <h3 class="nombre edits">Nombre: {{ productoId?.nombre }}</h3>
+        <h3 class="nombre edits">Nombre: <input type="text" [(ngModel)]="productoId.nombre" /></h3>
       </div>
-      <h3 class="categoria edits">Categoria: {{ productoId?.categoria }}</h3>
-      <h3 class="edits">Detalles: {{ productoId?.detalles }}</h3>
-      <h3 class="precio edits">Precio: $ {{ productoId?.precio }}</h3>
+      <h3 class="categoria edits">Categoria: <input type="text" [(ngModel)]="productoId.categoria" /></h3>
+      <h3 class="edits">Detalles: <input type="text" [(ngModel)]="productoId.detalles" /></h3>
+      <h3 class="precio edits">Precio: $ <input type="number" [(ngModel)]="productoId.precio" /></h3>
     </div>
   </div>
   <div>
     <span></span>
   </div>
   <div>
-    <button>Guardar</button>
+    <button (click)="guardarProducto()">Guardar</button>
   </div>
 </div>
 <ng-template #elseDiv>

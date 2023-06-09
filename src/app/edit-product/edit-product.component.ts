@@ -7,15 +7,13 @@ import { ProductosService } from '../Servicios/productos.service';
   templateUrl: './edit-product.component.html',
   styleUrls: ['./edit-product.component.css']
 })
-
 export class EditProductComponent {
-
   @Input() producto: any;
-  public productoId: any
-  public loading = false
+  public productoId: any;
+  public loading = false;
+  public editImage = false;
+  public imageSrc: string | ArrayBuffer | null = null;
 
-  public image = false
-  public cargadas: any
   constructor(private route: ActivatedRoute, private productosService: ProductosService) { }
 
   ngOnInit() {
@@ -24,49 +22,51 @@ export class EditProductComponent {
       if (productId) {
         this.getProductById(productId);
       }
-    })
+    });
   }
 
   getProductById(id: string) {
-    this.productosService.getProductoById(id)
+    this.productosService
+      .getProductoById(id)
       .then(producto => {
-        // Aquí puedes hacer lo que necesites con los detalles del producto
         console.log(producto);
-        this.productoId = producto
-        this.loading = true
+        this.productoId = producto;
+        this.loading = true;
       })
       .catch(error => {
-        // Manejo de errores
         console.error(error);
       });
+
   }
-
-
-  // subir imagenes
-  public imageSrc: string | ArrayBuffer | null = null;
-  public imageSrcLink: string | null = null;
-  public editImage = false
 
   editImagen() {
-    this.editImage = !this.editImage
+    this.editImage = !this.editImage;
   }
 
-  onFileSelected(event: any) { //carga de archivo
+  onFileSelected(event: any) {
     const file: File = event.target.files[0];
     if (file) {
       const reader = new FileReader();
       reader.onload = (e: any) => {
-        this.imageSrc = e.target?.result;
+        this.imageSrc = e.target.result;
+        this.productoId.imagen = file
       };
       reader.readAsDataURL(file);
     }
   }
 
-  onFileLink(event: any) { //carga a travez de link
+  onFileLink(event: any) {
     const newValue: string = event.target.value;
     if (newValue) {
-      this.imageSrc = newValue
-    };
+      this.imageSrc = newValue;
+    }
   }
 
+  guardarProducto() {
+    // Aquí debes completar la lógica para guardar el producto editado
+    // Utiliza this.productoId para obtener los datos modificados del producto
+    // y llama al método correspondiente en tu servicio ProductosService
+    // Ejemplo: this.productosService.editProductoById(this.productoId.id, this.productoId)
+    console.log(this.productoId)
+  }
 }
