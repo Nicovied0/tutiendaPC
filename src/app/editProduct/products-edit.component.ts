@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ProductosService } from '../Servicios/productsEdit.service';
+import { ProductosEditService } from '../Servicios/productsEdit.service'
 import { Router } from '@angular/router';
 
 @Component({
@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./products-edit.component.css']
 })
 export class ProductsEditComponent {
-  constructor(private productosService: ProductosService, private router: Router) { }
+  constructor(private productosService: ProductosEditService, private router: Router) { }
   public loading = false
   productos: any = []
 

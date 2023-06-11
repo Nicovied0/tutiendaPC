@@ -3,7 +3,7 @@ import { HttpClient } from "@angular/common/http";
 import { map } from "rxjs/operators";
 
 @Injectable({ providedIn: 'root' })
-export class ProductosService {
+export class ProductosEditService {
 
   constructor(private http: HttpClient) { }
 
@@ -15,10 +15,12 @@ export class ProductosService {
     ).toPromise();
   }
 
-
   getProductoById(id: string) {
-    const url = `https://tu-tienda-pc-default-rtdb.firebaseio.com/productos${id}.json`;
+    const url = `https://tu-tienda-pc-default-rtdb.firebaseio.com/productos/${id}.json`;
     return this.http.get<any>(url).toPromise();
   }
-
+  editProductoById(id: string, producto: any) {
+    const url = `https://tu-tienda-pc-default-rtdb.firebaseio.com/productos/${id}.json`;
+    return this.http.put(url, producto).toPromise();
+  }
 }

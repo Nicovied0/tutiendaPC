@@ -20,8 +20,9 @@ import { PanelAdminComponent } from './panel-admin/panel-admin.component';
 import { LoaderComponent } from './loader/loader.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
-import { ProductsEditComponent } from './products-edit/products-edit.component';
+import { ProductsEditComponent } from './editProduct/products-edit.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
+import { ProductosEditService } from './Servicios/productsEdit.service'
 
 
 import { CarouselModule } from 'ngx-bootstrap/carousel';
@@ -60,7 +61,7 @@ import { LoginGuardian } from './Servicios/loginGuardian.service';
     FormsModule,
     CarouselModule.forRoot(),
   ],
-  providers: [LoginService, SearchService, LoginGuardian],
+  providers: [LoginService, SearchService, LoginGuardian, ProductosEditService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

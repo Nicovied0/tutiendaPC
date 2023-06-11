@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductosService } from '../Servicios/productos.service';
+import { ProductosEditService } from '../Servicios/productsEdit.service';
 
 @Component({
   selector: 'app-edit-product',
@@ -14,8 +15,8 @@ export class EditProductComponent {
   public editImage = false;
   public imageSrc: string | ArrayBuffer | null = null;
 
-  constructor(private route: ActivatedRoute, private productosService: ProductosService) { }
-
+  // constructor(private route: ActivatedRoute, private productosService: ProductosService, private editProducts: ProductosEditService) { }
+  constructor(private route: ActivatedRoute, private productosService: ProductosEditService) { }
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       const productId = params.get('id');
@@ -24,6 +25,7 @@ export class EditProductComponent {
       }
     });
   }
+
 
   getProductById(id: string) {
     this.productosService
@@ -63,10 +65,15 @@ export class EditProductComponent {
   }
 
   guardarProducto() {
-    // Aquí debes completar la lógica para guardar el producto editado
-    // Utiliza this.productoId para obtener los datos modificados del producto
-    // y llama al método correspondiente en tu servicio ProductosService
-    // Ejemplo: this.productosService.editProductoById(this.productoId.id, this.productoId)
     console.log(this.productoId)
+    if (this.productoId) {
+      this.productosService.editProductoById(this.productoId.id, this.productoId)
+        .then(() => {
+          console.log('¡Producto editado exitosamente!');
+        })
+        .catch(error => {
+          console.error('Ocurrió un error al editar el producto:', error);
+        });
+    }
   }
 }
