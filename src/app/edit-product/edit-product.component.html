@@ -1,49 +1,62 @@
 <div class="div" *ngIf="loading; else elseDiv">
-  <div>
+  <div class="div2">
     <div>
-      <div class="actual">
-        <img [src]="productoId?.imagen" class="img" />
-        <i class="bi bi-pencil-fill icon" (click)="editImagen()"></i>
-        <div *ngIf="editImage">
-          <button>Subir imagen</button>
-          <button>Ingresar link</button>
+      <div class="divTotal">
+        <div class="actual">
+          <img [src]="productoId?.imagen" class="img" />
+          <i class="bi bi-pencil-fill icon" (click)="editImagen()"></i>
+          <div *ngIf="editImage">
+            <!-- <input type="file" (change)="onFileSelected($event)" /> -->
+            <!-- <input type="file"    [(ngModel)]="productoId.imagen" /> -->
 
-          <input type="file" (change)="onFileSelected($event)" />
-          <!-- <input type="file"    [(ngModel)]="productoId.imagen" /> -->
+            <!-- <input type="text" (change)="onFileLink($event)" /> -->
+            <input type="text" [(ngModel)]="productoId.imagen" />
+            <button (click)="guardarProducto()">Cargar</button>
+            <!-- <img [src]="imageSrc" alt="imgCargada" class="img" /> -->
+          </div>
+        </div>
+        <div class="actual">
+          <h3 class="nombre edits">Nombre:</h3>
+          <input
+            type="text"
+            [(ngModel)]="productoId.nombre"
+            class="nombre inputs"
+          />
+        </div>
+        <div class="actual">
+          <h3 class="categoria edits">Categoria:</h3>
+          <input
+            type="text"
+            [(ngModel)]="productoId.categoria"
+            class="nombre inputs"
+          />
+        </div>
+        <div class="actual">
+          <h3 class="edits">Detalles:</h3>
+          <input type="text" [(ngModel)]="productoId.detalles" class="inputs" />
+        </div>
 
-          <!-- <input type="text" (change)="onFileLink($event)" /> -->
-          <input type="text" [(ngModel)]="productoId.imagen" />
-          <button (click)="guardarProducto()">Cargar</button>
-          <img [src]="imageSrc" alt="imgCargada" class="img" />
+        <div class="actual">
+          <h3 class="precio edits">Precio: $</h3>
+          <input type="number" [(ngModel)]="productoId.precio" class="inputs" />
+        </div>
+        <div class="actual">
+          <h3 class="check">
+            Disponible:
+            <p *ngIf="productoId.dispible" class="pSiNo">Si</p>
+            <p *ngIf="!productoId.dispible" class="pSiNo">No</p>
+            <input
+              type="checkbox"
+              [(ngModel)]="productoId.dispible"
+              class="mycheck"
+            />
+          </h3>
         </div>
       </div>
-      <div class="actual">
-        <h3 class="nombre edits">
-          Nombre: <input type="text" [(ngModel)]="productoId.nombre" />
-        </h3>
-      </div>
-      <h3 class="categoria edits">
-        Categoria: <input type="text" [(ngModel)]="productoId.categoria" />
-      </h3>
-      <h3 class="edits">
-        Detalles: <input type="text" [(ngModel)]="productoId.detalles" />
-      </h3>
-      <h3 class="precio edits">
-        Precio: $ <input type="number" [(ngModel)]="productoId.precio" />
-      </h3>
-      <h3 class="precio edits">
-        Disponible:
-        <p *ngIf="productoId.dispible">Si</p>
-        <p *ngIf="!productoId.dispible">No</p>
-        <input type="checkbox" [(ngModel)]="productoId.dispible" />
-      </h3>
     </div>
-  </div>
-  <div>
-    <span></span>
-  </div>
-  <div>
-    <button (click)="guardarProducto()">Guardar</button>
+    <div class="divBtn">
+      <button (click)="guardarProducto()" class="btnGuardar">Guardar</button>
+    </div>
   </div>
 </div>
 <ng-template #elseDiv>
