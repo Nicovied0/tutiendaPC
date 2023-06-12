@@ -13,12 +13,15 @@ export class ProductosComponent {
   productos: any = []
   hover: boolean = false;
   hoverIndex: number = -1;
+  public disponible: boolean = false
 
   ngOnInit() {
     this.productosService.getProductos().then((results) => {
       this.productos = results
       console.log(this.productos)
       this.loading = true
+
+
     }).catch((error) => {
       console.error('Error al obtener los repositorios', error);
     })
@@ -53,4 +56,5 @@ export class ProductosComponent {
   onMouseLeave(index: number) {
     this.hoverIndex = -1;
   }
+
 }

@@ -24,7 +24,12 @@
         <div class="text">ENVIO GRATIS A TODO EL PAIS</div>
       </div>
     </div>
-    <div class="buttonsCarrito">
+    <div class="buttonsCarrito" *ngIf="!productoId.dispible">
+      <span *ngIf="carritoAgregado" class="agregado"
+        >No tenemos stock de este producto</span
+      >
+    </div>
+    <div class="buttonsCarrito" *ngIf="productoId.dispible">
       <button
         class="button"
         (click)="agregarAlCarrito()"
