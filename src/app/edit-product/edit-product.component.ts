@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { ProductosService } from '../Servicios/productos.service';
 import { ProductosEditService } from '../Servicios/productsEdit.service';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-edit-product',
@@ -70,6 +70,12 @@ export class EditProductComponent {
       this.productosService.editProductoById(this.productoId.id, this.productoId)
         .then(() => {
           console.log('¡Producto editado exitosamente!');
+          Swal.fire({
+            title: 'Cambios Guardados Correctamente!',
+            text: `Producto N: ${this.productoId.id} `,
+            icon: 'success',
+            confirmButtonText: 'Continuar'
+          })
         })
         .catch(error => {
           console.error('Ocurrió un error al editar el producto:', error);
