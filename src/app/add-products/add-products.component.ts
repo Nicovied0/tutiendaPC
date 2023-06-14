@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-add-products',
@@ -16,6 +17,12 @@ export class AddProductsComponent {
 
   cargarImagen() {
     console.log(this.producto.imagen)
+    Swal.fire({
+      title: 'Imagen cargada Correctamente!',
+      // text: `Producto N: ${this.productoId.id} `,
+      icon: 'success',
+      confirmButtonText: 'Continuar'
+    })
     this.imagenCargada = false
   }
   editImagen() {
@@ -26,6 +33,7 @@ export class AddProductsComponent {
   guardarProducto() {
     // Aquí puedes utilizar el objeto `producto` para guardar los valores en tu lógica
     console.log(this.producto);
+
   }
 
 }
