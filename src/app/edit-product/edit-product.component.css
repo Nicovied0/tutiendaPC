@@ -87,3 +87,9 @@
   font-weight: 600;
   font-size: x-large;
 }
+
+.btnGuardar:disabled {
+  opacity: 0.5; /* Cambia la opacidad del botón cuando está desactivado */
+  cursor: not-allowed; /* Elimina el cursor pointer cuando está desactivado */
+}
+

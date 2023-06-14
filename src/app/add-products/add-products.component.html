@@ -65,6 +65,13 @@
     </div>
   </div>
   <div class="divBtn p-3">
-    <button (click)="guardarProducto()" class="btnGuardar">Guardar</button>
+    <button
+      (click)="guardarProducto()"
+      class="btnGuardar"
+      [disabled]="!todosLosCamposRellenados()"
+
+    >
+      Guardar
+    </button>
   </div>
 </div>

@@ -29,11 +29,26 @@ export class AddProductsComponent {
     console.log(this.producto.imagen)
     this.imagenCargada = true
   }
+  todosLosCamposRellenados(): boolean {
+    // Verifica si todos los campos están rellenados
+    return (
+      this.producto.imagen &&
+      this.producto.nombre &&
+      this.producto.categoria &&
+      this.producto.precio &&
+      this.producto.dispible !== undefined
+    );
+  }
 
   guardarProducto() {
     // Aquí puedes utilizar el objeto `producto` para guardar los valores en tu lógica
     console.log(this.producto);
-
+    Swal.fire({
+      title: 'Producto creado Correctamente!',
+      text: `Se agrego " ${this.producto.nombre} "  a la lista de productos`,
+      icon: 'success',
+      confirmButtonText: 'Continuar'
+    })
   }
 
 }

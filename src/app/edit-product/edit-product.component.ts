@@ -65,6 +65,16 @@ export class EditProductComponent {
     }
   }
 
+  todosLosCamposRellenados(): boolean {
+    return (
+      this.productoId.imagen &&
+      this.productoId.nombre &&
+      this.productoId.categoria &&
+      this.productoId.precio &&
+      this.productoId.dispible !== undefined
+    );
+  }
+
   guardarProducto() {
     console.log(this.productoId)
     if (this.productoId) {
@@ -84,6 +94,7 @@ export class EditProductComponent {
         });
     }
   }
+
 
   goProducts() {
     this.router.navigate(['/productos']);
