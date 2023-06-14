@@ -1,1 +1,53 @@
-<p>add-products works!</p>
+<div>
+  <div class="div2">
+    <div>
+      <div class="divTotal">
+        <div class="actual">
+          <img [src]="producto?.imagen" class="img" />
+          <input type="text" [(ngModel)]="producto.imagen" />
+        </div>
+      </div>
+      <div class="actual">
+        <h3 class="nombre edits">Nombre:</h3>
+        <input
+          type="text"
+          [(ngModel)]="producto.nombre"
+          class="nombre inputs"
+        />
+      </div>
+      <div class="actual">
+        <h3 class="categoria edits">Categoria:</h3>
+        <select [(ngModel)]="producto.categoria" class="nombre inputs">
+          <option disabled selected>Selecciona una categoría</option>
+          <option value="Memorias RAM">Memorias RAM</option>
+          <option value="Procesadores">Procesadores</option>
+          <option value="Placas de Video">Placas de Video</option>
+          <option value="Gabinetes">Gabinetes</option>
+        </select>
+      </div>
+      <div class="actual">
+        <h3 class="edits">Detalles:</h3>
+        <input type="text" [(ngModel)]="producto.detalles" class="inputs" />
+      </div>
+      <div class="actual">
+        <h3 class="precio edits">Precio: $</h3>
+        <input type="number" [(ngModel)]="producto.precio" class="inputs" />
+      </div>
+      <div class="actual">
+        <h3 class="check">
+          Disponible:
+          <p *ngIf="producto.dispible" class="pSiNo">Si</p>
+          <p *ngIf="!producto.dispible" class="pSiNo">No</p>
+          <input
+            type="checkbox"
+            [(ngModel)]="producto.dispible"
+            class="mycheck"
+          />
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div class="divBtn">
+    <button (click)="guardarProducto()" class="btnGuardar">Guardar</button>
+  </div>
+</div>
