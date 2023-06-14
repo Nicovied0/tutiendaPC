@@ -14,9 +14,11 @@ export class PanelAdminComponent {
 
   editProduct() {
     this.edit = !this.edit
+    this.newProduct = false
   }
 
   addProduct() {
     this.newProduct = !this.newProduct
+    this.edit = false
   }
 }

@@ -1,8 +1,11 @@
 <div class="div">
-  <img />
-  <h2>Administrar productos</h2>
-  <button (click)="editProduct()">Editar Productos</button>
-  <button (click)="addProduct()">Add Product</button>
+  <div class="div2">
+    <h2>Administrar productos</h2>
+    <div class="div3">
+      <button (click)="editProduct()" class="btn btn-primary button">Editar Productos</button>
+      <button (click)="addProduct()" class="btn btn-primary button">Agregar Producto</button>
+    </div>
+  </div>
   <div *ngIf="newProduct">
     <app-add-products></app-add-products>
   </div>

@@ -3,7 +3,7 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  margin: 4rem 0;
+  padding: 4rem 0;
 }
 
 .div {
@@ -51,6 +51,7 @@
   margin: 0.5rem;
   cursor: pointer;
 }
-.icon2{
+
+.icon2 {
   color: red;
 }
