@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import Swal from 'sweetalert2';
+import { AdminService } from '../Servicios/admin.service';
 
 @Component({
   selector: 'app-add-products',
@@ -10,7 +11,7 @@ export class AddProductsComponent {
   producto: any = {};
   public imagenCargada = true
 
-  constructor() {
+  constructor(private adminService: AdminService) {
     this.producto.dispible = true; // Asignar el valor por defecto a dispible
   }
 
@@ -40,15 +41,37 @@ export class AddProductsComponent {
     );
   }
 
+
   guardarProducto() {
     // Aquí puedes utilizar el objeto `producto` para guardar los valores en tu lógica
     console.log(this.producto);
-    Swal.fire({
-      title: 'Producto creado Correctamente!',
-      text: `Se agrego " ${this.producto.nombre} "  a la lista de productos`,
-      icon: 'success',
-      confirmButtonText: 'Continuar'
-    })
+
+    this.producto.id = ''; // Asignar un valor único al campo id, por ejemplo
+
+    this.adminService.obtenerProductos().then((productos: any) => {
+      const ultimoId = this.adminService.obtenerUltimoId(productos);
+      const nuevoId = this.adminService.generarNuevoId(ultimoId);
+      this.producto.id = nuevoId.toString();
+
+      this.adminService.postProducto(this.producto).then(() => {
+        Swal.fire({
+          title: 'Producto creado Correctamente!',
+          text: `Se agregó "${this.producto.nombre}" a la lista de productos`,
+          icon: 'success',
+          confirmButtonText: 'Continuar'
+        });
+      }).catch(error => {
+        console.error('Error al crear el producto:', error);
+        Swal.fire({
+          title: 'Error',
+          text: 'Ocurrió un error al crear el producto',
+          icon: 'error',
+          confirmButtonText: 'Continuar'
+        });
+      });
+    }).catch(error => {
+      console.error('Error al obtener los productos:', error);
+    });
   }
 
 }
