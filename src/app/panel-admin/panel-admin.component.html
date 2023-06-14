@@ -2,10 +2,11 @@
   <img />
   <h2>Administrar productos</h2>
   <button (click)="editProduct()">Editar Productos</button>
+  <button (click)="addProduct()">Add Product</button>
+  <div *ngIf="newProduct">
+    <app-add-products></app-add-products>
+  </div>
   <div *ngIf="edit">
-    <!-- <form>
-      <span>sadas</span>
-    </form> -->
     <app-products-edit></app-products-edit>
   </div>
 </div>

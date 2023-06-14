@@ -8,17 +8,15 @@ import { Component } from '@angular/core';
 })
 export class PanelAdminComponent {
 
-
   public admin = true
   public edit = false
-
-
-
-
-
+  public newProduct = false
 
   editProduct() {
     this.edit = !this.edit
   }
 
+  addProduct() {
+    this.newProduct = !this.newProduct
+  }
 }

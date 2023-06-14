@@ -31,6 +31,7 @@ import { CategoriasComponent } from './categorias/categorias.component';
 import { EnvioComponent } from './envio/envio.component';
 import { SearchService } from './Servicios/search.service';
 import { LoginGuardian } from './Servicios/loginGuardian.service';
+import { AddProductsComponent } from './add-products/add-products.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,6 +54,7 @@ import { LoginGuardian } from './Servicios/loginGuardian.service';
     OfertComponent,
     CategoriasComponent,
     EnvioComponent,
+    AddProductsComponent,
   ],
   imports: [
     BrowserModule,
