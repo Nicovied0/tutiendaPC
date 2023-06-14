@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ProductosService } from '../Servicios/productos.service';
 import { Router } from '@angular/router';
+import { PayService } from '../Servicios/pay.service';
 
 @Component({
   selector: 'app-carrito',
@@ -13,7 +14,7 @@ export class CarritoComponent {
   public carritoVacio: boolean = true;
   public precioTotal: number = 0;
 
-  constructor(private productosService: ProductosService, private router: Router) { }
+  constructor(private productosService: ProductosService, private router: Router, private pay: PayService) { }
 
   ngOnInit() {
 

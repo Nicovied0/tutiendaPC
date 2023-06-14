@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductosEditService } from '../Servicios/productsEdit.service';
 import Swal from 'sweetalert2'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-edit-product',
@@ -16,7 +17,7 @@ export class EditProductComponent {
   public imageSrc: string | ArrayBuffer | null = null;
 
   // constructor(private route: ActivatedRoute, private productosService: ProductosService, private editProducts: ProductosEditService) { }
-  constructor(private route: ActivatedRoute, private productosService: ProductosEditService) { }
+  constructor(private route: ActivatedRoute, private productosService: ProductosEditService, private router: Router) { }
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       const productId = params.get('id');
@@ -76,10 +77,17 @@ export class EditProductComponent {
             icon: 'success',
             confirmButtonText: 'Continuar'
           })
+          this.goProducts()
         })
         .catch(error => {
           console.error('Ocurrió un error al editar el producto:', error);
         });
     }
   }
+
+  goProducts() {
+    this.router.navigate(['/productos']);
+  }
+
+
 }

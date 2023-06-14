@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ProductosEditService } from '../Servicios/productsEdit.service'
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2'
 
 @Component({
   selector: 'app-products-edit',
@@ -26,5 +27,25 @@ export class ProductsEditComponent {
     console.log(id)
     this.router.navigate(['/perfil/administrador/producto', id]);
   }
-
+  deleteProduct(id: number) {
+    console.log(id)
+    Swal.fire({
+      title: 'Esta seguro?',
+      text: `Esta seguro de borrar el producto #${id}`,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Si, Borrar!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Borrado Exitosamente!',
+          `Producto # ${id}.`,
+          'success'
+        )
+        this.productosService.deleteProductoById(id)
+      }
+    })
+  }
 }

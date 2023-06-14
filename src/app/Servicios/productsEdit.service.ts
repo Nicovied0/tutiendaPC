@@ -23,4 +23,11 @@ export class ProductosEditService {
     const url = `https://tu-tienda-pc-default-rtdb.firebaseio.com/productos/${id}.json`;
     return this.http.put(url, producto).toPromise();
   }
+
+  deleteProductoById(id: number) {
+    const url = `https://tu-tienda-pc-default-rtdb.firebaseio.com/productos/${id}.json`;
+    console.log(url)
+    return this.http.delete<any>(url).toPromise();
+  }
+
 }
