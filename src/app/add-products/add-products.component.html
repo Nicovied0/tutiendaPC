@@ -2,9 +2,26 @@
   <div class="div2">
     <div>
       <div class="divTotal">
-        <div class="actual">
+        <div class="actual divImagen">
           <img [src]="producto?.imagen" class="img" />
-          <input type="text" [(ngModel)]="producto.imagen" />
+          <div *ngIf="imagenCargada" class="divInputAndLabel">
+            <h3 class="nombre">Ingrese una imagen</h3>
+            <input
+              type="text"
+              class="nombre inputs"
+              [(ngModel)]="producto.imagen"
+              placeholder="Ingrese Link de la nueva imagen"
+            />
+          </div>
+
+          <div>
+            <i
+              _ngcontent-yvo-c11=""
+              class="bi bi-pencil-fill icon"
+              (click)="editImagen()"
+            ></i>
+            <i class="bi bi-check2 icon2" (click)="cargarImagen()"></i>
+          </div>
         </div>
       </div>
       <div class="actual">
@@ -47,7 +64,7 @@
       </div>
     </div>
   </div>
-  <div class="divBtn">
+  <div class="divBtn p-3">
     <button (click)="guardarProducto()" class="btnGuardar">Guardar</button>
   </div>
 </div>
