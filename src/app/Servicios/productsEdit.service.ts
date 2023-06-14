@@ -10,10 +10,13 @@ export class ProductosEditService {
   getProductos() {
     return this.http.get<any>('https://tu-tienda-pc-default-rtdb.firebaseio.com/productos.json').pipe(
       map((productos: any[]) => {
-        return productos.map((producto, index) => ({ ...producto, index: index + 1 }));
+        return productos
+          .filter((producto: any) => producto.activo !== false)
+          .map((producto, index) => ({ ...producto, index: index + 1 }));
       })
     ).toPromise();
   }
+
 
   getProductoById(id: string) {
     const url = `https://tu-tienda-pc-default-rtdb.firebaseio.com/productos/${id}.json`;
@@ -26,8 +29,14 @@ export class ProductosEditService {
 
   deleteProductoById(id: number) {
     const url = `https://tu-tienda-pc-default-rtdb.firebaseio.com/productos/${id}.json`;
-    console.log(url)
-    return this.http.delete<any>(url).toPromise();
+    console.log(`soy el del service ${id}, este es el id`);
+
+    // En lugar de eliminar el producto, actualiza la propiedad "activo" a falso
+    const productoDesactivado = { activo: false };
+
+    return this.http.patch<any>(url, productoDesactivado).toPromise();
+
   }
+
 
 }

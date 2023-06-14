@@ -8,14 +8,25 @@ export class ProductosService {
   constructor(private http: HttpClient) { }
 
   getProductos() {
-    return this.http.get<any>('https://tu-tienda-pc-default-rtdb.firebaseio.com/productos.json').toPromise();
+    return this.http.get<any>('https://tu-tienda-pc-default-rtdb.firebaseio.com/productos.json').toPromise()
+      .then((productos: any[]) => {
+        return productos.filter((producto: any) => producto.activo !== false);
+      });
   }
 
 
   getProductoById(id: string) {
     const url = `https://tu-tienda-pc-default-rtdb.firebaseio.com/productos/${id}.json`;
-    return this.http.get<any>(url).toPromise();
+    return this.http.get<any>(url).toPromise()
+      .then((producto: any) => {
+        if (producto && producto.activo !== false) {
+          return producto;
+        } else {
+          return null; // Retorna null si el producto no existe o está inactivo
+        }
+      });
   }
+
 
   async getMemorias() {
     try {
@@ -23,16 +34,16 @@ export class ProductosService {
 
       if (productos) {
         const productosFilter = productos
-          .filter((producto: any) => producto.categoria === "Memorias RAM");
+          .filter((producto: any) => producto.categoria === "Memorias RAM" && producto.activo !== false);
 
         console.log("funcionó");
         console.log(productosFilter);
         return productosFilter;
       }
-      return []
+      return [];
     } catch (error) {
       console.error("Ocurrió un error:", error);
-      return []
+      return [];
     }
   }
 
@@ -42,13 +53,14 @@ export class ProductosService {
 
       if (productos) {
         const productosFilter = productos
-          .filter((producto: any) => producto.categoria === "Procesadores");
+          .filter((producto: any) => producto.categoria === "Procesadores" && producto.activo !== false);
+
         return productosFilter;
       }
-      return []
+      return [];
     } catch (error) {
       console.error("Ocurrió un error:", error);
-      return []
+      return [];
     }
   }
 
@@ -58,13 +70,14 @@ export class ProductosService {
 
       if (productos) {
         const productosFilter = productos
-          .filter((producto: any) => producto.categoria === "Placas de Video");
+          .filter((producto: any) => producto.categoria === "Placas de Video" && producto.activo !== false);
+
         return productosFilter;
       }
-      return []
+      return [];
     } catch (error) {
       console.error("Ocurrió un error:", error);
-      return []
+      return [];
     }
   }
   async getGabinetes() {
@@ -73,15 +86,17 @@ export class ProductosService {
 
       if (productos) {
         const productosFilter = productos
-          .filter((producto: any) => producto.categoria === "Gabinetes");
+          .filter((producto: any) => producto.categoria === "Gabinetes" && producto.activo !== false);
+
         return productosFilter;
       }
-      return []
+      return [];
     } catch (error) {
       console.error("Ocurrió un error:", error);
-      return []
+      return [];
     }
   }
+
 
 
 
@@ -91,22 +106,23 @@ export class ProductosService {
       const response = await this.http.get<any[]>('https://tu-tienda-pc-default-rtdb.firebaseio.com/productos.json').toPromise();
 
       if (response) {
-        const productos = Object.values(response); // Obtén los valores de la respuesta como un arreglo de productos
-
-        const productosOferta = productos.sort(() => Math.random() - 0.5).slice(0, 7);
+        const productos = Object.values(response);
+        const productosOferta = productos
+          .filter((producto: any) => producto.activo !== false)
+          .sort(() => Math.random() - 0.5)
+          .slice(0, 7);
 
         console.log("Oferta:");
         console.log(productosOferta);
         return productosOferta;
       }
 
-      return []; // Valor de retorno predeterminado si la respuesta es null o undefined
+      return [];
     } catch (error) {
       console.error("Ocurrió un error:", error);
-      return []; // Valor de retorno predeterminado en caso de error
+      return [];
     }
   }
-
 
   getProductoCarrito(): any[] {
     const carritoActual = localStorage.getItem('carrito');
@@ -119,6 +135,7 @@ export class ProductosService {
     console.log(this.carrito);
     return this.carrito;
   }
+
 
   deleteProductoCarrito(id: any): any {
     console.log(id)

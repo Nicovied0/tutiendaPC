@@ -45,7 +45,11 @@ export class ProductsEditComponent {
           'success'
         )
         this.productosService.deleteProductoById(id)
+        setTimeout(() => {
+          window.location.reload()
+        }, 2000)
       }
     })
   }
+
 }
