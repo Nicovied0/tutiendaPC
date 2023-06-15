@@ -10,6 +10,7 @@ export class ProfileComponent {
   constructor(private loginService: LoginService) { }
 
   public profile = false
+  public getProfile: any
 
   ngOnInit() {
     console.log(this.loginService.isAuthenticated())
@@ -20,6 +21,7 @@ export class ProfileComponent {
 
       this.profile = true
     }
+    this.userProfile()
   }
 
   logout() {
@@ -27,7 +29,7 @@ export class ProfileComponent {
     this.loginService.logout()
     window.location.reload()
   }
-  
+
   consoleToken() {
     console.log(this.loginService.getIdToken())
     console.log(this.loginService.isAuthenticated())
@@ -48,5 +50,11 @@ export class ProfileComponent {
         confirmButtonText: 'Continuar'
       })
     }
+  }
+
+  userProfile() {
+    const usuarioLogeado = JSON.parse(localStorage.getItem('usuario') || '[]')
+    console.log(usuarioLogeado)
+    this.getProfile = usuarioLogeado
   }
 }

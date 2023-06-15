@@ -14,7 +14,7 @@ export class CarritoComponent {
   public carritoVacio: boolean = true;
   public precioTotal: number = 0;
 
-  constructor(private productosService: ProductosService, private router: Router, private pay: PayService) { }
+  constructor(private productosService: ProductosService, private router: Router,) { }
 
   ngOnInit() {
 
@@ -69,6 +69,5 @@ export class CarritoComponent {
   }
 
 
-  //funcion
 
 }
