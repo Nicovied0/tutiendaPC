@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { ProductosService } from '../Servicios/productos.service';
 import { Router } from '@angular/router';
-import { PayService } from '../Servicios/pay.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-carrito',
@@ -39,6 +39,24 @@ export class CarritoComponent {
     // Implementa aquí la lógica para realizar la compra
     const total = this.precioTotal
     console.log(total, "soy ese")
+    Swal.fire({
+      title: 'Estas seguro de confirmar la compra?',
+      text: `El monto es de  $${total}.`,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'No, cancelar compra!',
+      confirmButtonText: 'Si, Comprar!'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        Swal.fire(
+          'Pago realizado!',
+          `Valor total del monto $${total}.`,
+          'success'
+        )
+      }
+    })
   }
 
   goProductos() {
