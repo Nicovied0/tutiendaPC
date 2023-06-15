@@ -1,13 +1,14 @@
 import { Component } from '@angular/core';
 import { LoginService } from '../Servicios/login.service';
 import Swal from 'sweetalert2'
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-profile',
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
-  constructor(private loginService: LoginService) { }
+  constructor(private loginService: LoginService, private router: Router) { }
 
   public profile = false
   public getProfile: any
@@ -56,5 +57,8 @@ export class ProfileComponent {
     const usuarioLogeado = JSON.parse(localStorage.getItem('usuario') || '[]')
     console.log(usuarioLogeado)
     this.getProfile = usuarioLogeado
+  }
+  goPanel() {
+    this.router.navigate(['/perfil/administrador']);
   }
 }
