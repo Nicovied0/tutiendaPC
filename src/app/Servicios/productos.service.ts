@@ -22,7 +22,7 @@ export class ProductosService {
         if (producto && producto.activo !== false) {
           return producto;
         } else {
-          return null; // Retorna null si el producto no existe o está inactivo
+          return null; 
         }
       });
   }

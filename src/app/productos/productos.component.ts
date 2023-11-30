@@ -57,4 +57,24 @@ export class ProductosComponent {
     this.hoverIndex = -1;
   }
 
+  selectedFilter: string = ''; 
+
+  onFilterChange(filter: string) {
+    this.selectedFilter = filter; 
+    console.log(filter,"soy el filter de padree")
+  }
+  
+  applyFilter() {
+    if (this.selectedFilter === 'menor') {
+      return this.productos.slice().sort((a: any, b: any) => a.precio - b.precio);
+    } else if (this.selectedFilter === 'mayor') {
+      return this.productos.slice().sort((a: any, b: any) => b.precio - a.precio);
+    } else if (this.selectedFilter) {
+      // Filtrar por tipo
+      return this.productos.filter((producto: any) => producto.type === this.selectedFilter);
+    } else {
+      // En caso de que no haya filtro seleccionado, devolver la lista completa de productos
+      return this.productos;
+    }
+  }
 }
