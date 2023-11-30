@@ -6,6 +6,7 @@
   flex-wrap: nowrap;
   flex-direction: column;
 }
+
 .div {
   display: flex;
   max-width: 100%;
@@ -36,18 +37,6 @@
   background-color: #ffffff19;
 }
 
-.cart-icon {
-  /* Estilos específicos para el icono del carrito */
-}
-
-.profile-icon {
-  /* Estilos específicos para el icono de perfil */
-}
-
-.admin-icon {
-  /* Estilos específicos para el icono de administrador */
-}
-
 .div2 {
   background-color: var(--secondary-color);
   width: 100%;
@@ -70,4 +59,5 @@
 .div4 {
   display: flex;
   justify-content: space-evenly;
+  width: 100%;
 }
