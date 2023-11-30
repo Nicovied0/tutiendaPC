@@ -6,24 +6,8 @@
   align-items: center;
 }
 
-.div2 {
-  background-color: var(--secondary-color);
-  width: 100%;
-  padding: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.btns{
-  color: #fff;
-  margin: 0.5rem;
-  font-size: 16px;
-  font-weight: 500;
-  cursor: pointer;
-}
-.btns:hover{
-  color: #000;
-}
+
+
 .div3 {
   margin: 5rem;
   width: 100%;

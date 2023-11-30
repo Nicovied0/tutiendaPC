@@ -1,15 +1,23 @@
 .nav {
   display: flex;
-  padding: 1rem;
   align-items: center;
   justify-content: center;
   min-width: 100%;
   flex-wrap: nowrap;
+  flex-direction: column;
 }
-
+.div {
+  display: flex;
+  max-width: 100%;
+  padding: 1rem 0.5rem 0;
+  align-items: center;
+}
 .nav-title {
   cursor: pointer;
   text-wrap: nowrap;
+  font-size: x-large;
+  font-weight: 900;
+  margin: 0.3rem;
 }
 
 .serchbar {
@@ -38,4 +46,28 @@
 
 .admin-icon {
   /* Estilos específicos para el icono de administrador */
+}
+
+.div2 {
+  background-color: var(--secondary-color);
+  width: 100%;
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.btns {
+  color: #fff;
+  margin: 0.5rem;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.btns:hover {
+  color: #000;
+}
+
+.div4 {
+  display: flex;
+  justify-content: space-evenly;
 }

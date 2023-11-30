@@ -26,4 +26,15 @@ export class NavComponent {
   goPanelAdmin() {
     this.router.navigate(['/perfil/administrador']);
   }
+  
+  goProductos() {
+    this.router.navigate(['/productos']);
+  }
+
+  goCategorias() {
+    this.router.navigate(['/categorias']);
+  }
+  goEnvio() {
+    this.router.navigate(['/formasDeEnvio']);
+  }
 }
