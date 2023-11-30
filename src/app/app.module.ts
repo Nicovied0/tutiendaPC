@@ -32,6 +32,7 @@ import { OfertComponent } from './ofert/ofert.component';
 import { CategoriasComponent } from './categorias/categorias.component';
 import { EnvioComponent } from './envio/envio.component';
 import { AddProductsComponent } from './add-products/add-products.component';
+import { FiltersComponent } from './filters/filters.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,6 +56,7 @@ import { AddProductsComponent } from './add-products/add-products.component';
     CategoriasComponent,
     EnvioComponent,
     AddProductsComponent,
+    FiltersComponent,
   ],
   imports: [
     BrowserModule,

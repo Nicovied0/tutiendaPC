@@ -1,5 +1,6 @@
-.container {
+.containers {
   width: 100%;
+  padding: 2rem 2rem;
 }
 
 .div2 {
@@ -7,10 +8,15 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  padding: 1rem;
-
 }
-
+.divFiltros {
+  margin-top: 2rem;
+}
+.filtersAndCards {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+}
 .containerProducto:hover {
   scale: 1.1;
 }
@@ -25,7 +31,6 @@
   border-radius: 1rem;
   z-index: 3;
   transform: rotate(30deg);
-
 }
 
 .div {
@@ -37,15 +42,13 @@
   justify-content: space-between;
   background-color: #fff;
   padding: 3rem;
-  margin: 2rem;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, .1);
+  margin: 2rem 1rem;
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1);
 }
 
 .img {
   width: 100%;
   max-height: 25rem;
-
-
 }
 
 .precio {
@@ -74,7 +77,8 @@
 
 .divOrder {
   display: flex;
-  padding: 1rem;
+  padding: 1rem 9rem;
+  justify-content: flex-end;
 }
 
 .selectInput {

@@ -1,4 +1,4 @@
-<div class="container" *ngIf="loading; else elseDiv">
+<div class="containers" *ngIf="loading; else elseDiv">
   <div>
     <div class="divOrder">
       <h3>Ordenar por</h3>
@@ -9,24 +9,30 @@
       </select>
     </div>
   </div>
-  <div class="div2">
-    <div
-      *ngFor="let producto of productos; let i = index"
-      (mouseenter)="onMouseEnter(i)"
-      (mouseleave)="onMouseLeave(i)"
-    >
-      <div (click)="verDetalle(producto.id)" style="position: relative">
-        <h2 *ngIf="!producto.dispible" class="NoDisponible">Sin Stock</h2>
-        <div class="div">
-          <div>
-            <img [src]="producto.imagen" class="img" />
-          </div>
-          <div>
-            <h3 class="precio">$ {{ producto.precio }}</h3>
-            <p class="parrafo">Envio Gratis</p>
-            <h2 class="nombre" [ngClass]="{ 'show-nombre': hoverIndex === i }">
-              {{ hoverIndex === i ? producto.nombre : "" }}
-            </h2>
+  <div class="filtersAndCards">
+    <div class="divFiltros">
+<app-filters></app-filters>
+    
+    </div>
+    <div class="div2">
+      <div
+        *ngFor="let producto of productos; let i = index"
+        (mouseenter)="onMouseEnter(i)"
+        (mouseleave)="onMouseLeave(i)"
+      >
+        <div (click)="verDetalle(producto.id)" style="position: relative">
+          <h2 *ngIf="!producto.dispible" class="NoDisponible">Sin Stock</h2>
+          <div class="div">
+            <div>
+              <img [src]="producto.imagen" class="img" />
+            </div>
+            <div>
+              <h3 class="precio">$ {{ producto.precio }}</h3>
+              <p class="parrafo">Envio Gratis</p>
+              <h2 class="nombre" [ngClass]="{ 'show-nombre': hoverIndex === i }">
+                {{ hoverIndex === i ? producto.nombre : "" }}
+              </h2>
+            </div>
           </div>
         </div>
       </div>
