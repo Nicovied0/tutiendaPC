@@ -36,8 +36,6 @@ export class ProductosService {
         const productosFilter = productos
           .filter((producto: any) => producto.categoria === "Memorias RAM" && producto.activo !== false);
 
-        console.log("funcionó");
-        console.log(productosFilter);
         return productosFilter;
       }
       return [];

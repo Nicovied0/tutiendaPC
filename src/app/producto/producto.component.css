@@ -9,7 +9,12 @@
   background-color: white;
   border-radius: 1rem;
 }
-
+.div2 {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .contenedor {
   background-color: #eee;
   padding: 5rem;
@@ -35,8 +40,8 @@
 
 .img {
   width: 100%;
-  max-width: 100%;
   overflow: hidden;
+  padding: 2rem;
 }
 
 .precio {
@@ -45,8 +50,8 @@
 }
 
 .nombre {
-  font-size: 2rem;
-  font-weight: bold;
+  font-size: 24px;
+  font-weight: 500;
   margin-bottom: 5px;
 }
 
@@ -60,13 +65,11 @@
 .button:hover {
   scale: 1.1;
   transition: 0.5s ease-in-out;
-
 }
 
 .button:not(:hover) {
   transition: 0.5s ease-in-out;
 }
-
 
 .categoria {
   background-color: #f50057;
@@ -89,7 +92,6 @@
   margin: 3rem 0;
 }
 
-
 .icon-container {
   position: relative;
   display: inline-block;
@@ -111,7 +113,6 @@
   color: white;
   transition: opacity 0.3s ease-in-out;
   min-inline-size: max-content;
-
 }
 
 .icon:hover {

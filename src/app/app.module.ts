@@ -29,7 +29,6 @@ import { LoginComponent } from './login/login.component';
 import { ProductsEditComponent } from './editProduct/products-edit.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
 import { OfertComponent } from './ofert/ofert.component';
-import { CategoriasComponent } from './categorias/categorias.component';
 import { EnvioComponent } from './envio/envio.component';
 import { AddProductsComponent } from './add-products/add-products.component';
 import { FiltersComponent } from './filters/filters.component';
@@ -53,7 +52,6 @@ import { FiltersComponent } from './filters/filters.component';
     ProductsEditComponent,
     EditProductComponent,
     OfertComponent,
-    CategoriasComponent,
     EnvioComponent,
     AddProductsComponent,
     FiltersComponent,

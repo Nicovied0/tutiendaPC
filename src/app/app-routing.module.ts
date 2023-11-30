@@ -6,7 +6,6 @@ import { ProductoComponent } from './producto/producto.component';
 import { ProfileComponent } from './profile/profile.component';
 import { PanelAdminComponent } from './panel-admin/panel-admin.component';
 import { EditProductComponent } from './edit-product/edit-product.component';
-import { CategoriasComponent } from './categorias/categorias.component';
 import { EnvioComponent } from './envio/envio.component'
 import { CarritoComponent } from './carrito/carrito.component';
 import { LoginGuardian } from './Servicios/loginGuardian.service';
@@ -18,7 +17,6 @@ const routes: Routes = [
   { path: 'perfil', component: ProfileComponent },
   { path: 'perfil/administrador', component: PanelAdminComponent, canActivate: [LoginGuardian] },
   { path: 'perfil/administrador/producto/:id', component: EditProductComponent, canActivate: [LoginGuardian] },
-  { path: 'categorias', component: CategoriasComponent },
   { path: 'formasDeEnvio', component: EnvioComponent },
   { path: 'carrito', component: CarritoComponent }
 ];
