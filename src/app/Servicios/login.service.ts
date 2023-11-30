@@ -20,17 +20,14 @@ export class LoginService {
             // this.router.navigate(['/'])
           }
         )
-        // handle response
       })
       .catch((error: any) => {
-        // handle error
         console.log("error al logearse")
       });
   }
 
 
   getIdToken() {
-    // console.log(this.token)
     return this.token
   }
 
