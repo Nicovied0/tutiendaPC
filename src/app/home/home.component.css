@@ -7,26 +7,33 @@
 }
 
 .div2 {
-  background: radial-gradient(ellipse at center, #000000 0, #232323 100%);
+  background-color: var(--secondary-color);
   width: 100%;
   padding: 2rem;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
+.btns{
+  color: #fff;
+  margin: 0.5rem;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.btns:hover{
+  color: #000;
+}
 .div3 {
   margin: 5rem;
-  width: 80%;
-  padding: 2rem 5rem;
-  background-color: #3f51b5;
+  width: 100%;
+  padding: 2rem 1rem;
   border-radius: 2rem;
 }
 
 .div4 {
-  display: flex;
-  justify-content: space-around;
-  width: 30rem;
+      display: flex;
+    justify-content: space-evenly;
 }
 
 .opertComponent {

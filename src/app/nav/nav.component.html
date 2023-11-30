@@ -1,38 +1,11 @@
 <nav class="nav">
-  <h2 style="cursor: pointer" (click)="goHome()">CPU Central</h2>
+  <h2 (click)="goHome()" class="nav-title">CPU Central</h2>
   <app-serch-bar class="serchbar"></app-serch-bar>
+  <i class="bi bi-cart iClass cart-icon" (click)="goCarrito()"></i>
+  <i class="bi bi-person-circle iClass profile-icon" (click)="goProfile()"></i>
   <i
-    class="bi bi-cart iClass"
-    style="
-      font-size: 2rem;
-      color: #fff;
-      padding: 1rem;
-      cursor: pointer;
-      border-radius: 100%;
-    "
-    (click)="goCarrito()"
-  ></i>
-  <i
-    class="bi bi-person-circle iClass"
-    style="
-      font-size: 2rem;
-      color: #fff;
-      padding: 1rem;
-      cursor: pointer;
-      border-radius: 100%;
-    "
-    (click)="goProfile()"
-  ></i>
-  <i
-  *ngIf="userAdmin"
-    class="bi bi-gear iClass"
-    style="
-      font-size: 2rem;
-      color: #fff;
-      padding: 1rem;
-      cursor: pointer;
-      border-radius: 100%;
-    "
+    *ngIf="userAdmin"
+    class="bi bi-gear iClass admin-icon"
     (click)="goPanelAdmin()"
   ></i>
 </nav>

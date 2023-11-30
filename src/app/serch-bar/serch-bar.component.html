@@ -7,16 +7,12 @@
       [(ngModel)]="value"
       (ngModelChange)="searchButton($event)"
     />
-    <i
-      class="bi bi-search search"
-
-    ></i>
   </div>
   <div class="dropdown" *ngIf="showDropdown && value.length > 0">
     <ul class="ul">
       <li *ngFor="let producto of resultados" class="li">
         <div class="divLi" (click)="goProduct(producto.id)">
-          <img src={{producto.imagen}} class="img" />
+          <img src="{{ producto.imagen }}" class="img" />
           <h3 class="nombre">
             {{ producto.nombre }}
           </h3>
