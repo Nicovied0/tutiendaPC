@@ -17,7 +17,6 @@
   padding: 1.3rem;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
   justify-content: space-between;
-
 }
 
 .divPrecioProduct {
@@ -25,12 +24,30 @@
 }
 
 .butonVer {
-  font-size: 1rem;
-  margin: 0.4rem;
+  font-size: 12px !important;
+  margin-top: 10px;
   border-radius: 0.7rem;
   color: #fff;
-  background-color: #3f51b5;
+  background-color: #fd611a;
+  cursor: pointer;
+  outline: none;
+  border: none;
   padding: 0.5rem 1.3rem;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  display: inline-block;
+  white-space: nowrap;
+  text-decoration: none;
+  vertical-align: baseline;
+  min-width: 64px;
+  line-height: 36px;
+  border-radius: 4px;
+  overflow: visible;
+  transform: translate3d(0, 0, 0);
+  transition: background 400ms cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .precio {
@@ -39,11 +56,10 @@
 
 .nombre {
   font-size: 1.2rem;
-
 }
 
 .img {
-  width: 100% !important
+  width: 100% !important;
 }
 
 .titulo {
@@ -90,5 +106,11 @@
 
   100% {
     transform: translateX(-100%);
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .carousel-track {
+    animation: carousel-animation 5s linear infinite;
   }
 }

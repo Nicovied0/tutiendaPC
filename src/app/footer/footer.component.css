@@ -1,32 +1,40 @@
-.div {
-  display: flex;
-  flex-direction: row;
+.footer {
+  color: #fff;
+  background-color: var(--secondary-color);
+  padding: 2rem;
 }
-
-.img {
-  border-radius: 100%;
-}
-
-.divGeneral {
+.footer-content {
   display: flex;
   justify-content: space-around;
   flex-direction: row;
   align-items: center;
-  background-color: black;
 }
 
-.a {
-  color: white;
-  text-decoration: none !important
+.fiscal {
+  height: 5rem;
 }
-
-.ul {
+.footer-info {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  list-style:none
+}
+.notech {
+  height: 3rem;
+  margin: 0.5rem;
+}
+.footer-help {
+  text-align: center;
 }
 
-.li {
-  margin: 1rem;
-
+@media screen and (max-width: 600px) {
+  .fiscal{
+    display: none;
+  }
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-info{
+    margin-bottom: 10px;
+  }
 }

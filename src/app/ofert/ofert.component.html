@@ -1,6 +1,6 @@
 <div class="div">
   <div class="titulo">
-    <h2>Ofertas</h2>
+    <h2 class="h2">Ofertas</h2>
   </div>
   <div class="carousel-container">
     <div class="carousel-track">
@@ -11,7 +11,7 @@
             <img [src]="producto.imagen" alt="Producto" class="img" />
             <h3 class="nombre">{{ producto.nombre }}</h3>
             <div class="divPrecioProduct">
-              <button class="btn btn-primary" (click)="goProducto(producto.id)">
+              <button class="butonVer" (click)="goProducto(producto.id)">
                 Ver Producto
               </button>
             </div>
@@ -25,10 +25,7 @@
             <img [src]="producto.imagen" alt="Producto" class="img" />
             <h3 class="nombre">{{ producto.nombre }}</h3>
             <div class="divPrecioProduct">
-              <button
-                class="btn btn-primary"
-                (click)="goProducto(producto.index)"
-              >
+              <button class="butonVer" (click)="goProducto(producto.index)">
                 Ver Producto
               </button>
             </div>
