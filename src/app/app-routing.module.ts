@@ -9,6 +9,7 @@ import { EditProductComponent } from './edit-product/edit-product.component';
 import { EnvioComponent } from './envio/envio.component'
 import { CarritoComponent } from './carrito/carrito.component';
 import { LoginGuardian } from './Servicios/loginGuardian.service';
+import { AyudaComponent } from './ayuda/ayuda.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: 'perfil/administrador', component: PanelAdminComponent, canActivate: [LoginGuardian] },
   { path: 'perfil/administrador/producto/:id', component: EditProductComponent, canActivate: [LoginGuardian] },
   { path: 'formasDeEnvio', component: EnvioComponent },
-  { path: 'carrito', component: CarritoComponent }
+  { path: 'carrito', component: CarritoComponent },
+  { path: 'ayuda', component: AyudaComponent }
 ];
 
 @NgModule({

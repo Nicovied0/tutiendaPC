@@ -37,4 +37,7 @@ export class NavComponent {
   goEnvio() {
     this.router.navigate(['/formasDeEnvio']);
   }
+  goAyuda(){
+    this.router.navigate(['/ayuda']);
+  }
 }

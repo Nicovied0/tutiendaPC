@@ -32,6 +32,8 @@ import { OfertComponent } from './ofert/ofert.component';
 import { EnvioComponent } from './envio/envio.component';
 import { AddProductsComponent } from './add-products/add-products.component';
 import { FiltersComponent } from './filters/filters.component';
+import { AyudaComponent } from './ayuda/ayuda.component';
+import { PreguntasComponent } from './preguntas/preguntas.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -55,6 +57,8 @@ import { FiltersComponent } from './filters/filters.component';
     EnvioComponent,
     AddProductsComponent,
     FiltersComponent,
+    AyudaComponent,
+    PreguntasComponent,
   ],
   imports: [
     BrowserModule,
