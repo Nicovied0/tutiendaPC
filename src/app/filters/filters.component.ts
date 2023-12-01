@@ -11,6 +11,7 @@ export class FiltersComponent {
  
   onFilterChange(filter: string) {
     console.log(filter);
-    this.filterChanged.emit(filter); // Emite el evento con el valor del filtro seleccionado
+    this.filterChanged.emit(filter);
+    window.scroll(0,0)
   }
 }

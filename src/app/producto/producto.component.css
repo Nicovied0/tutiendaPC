@@ -1,7 +1,7 @@
 .div {
   display: flex;
   flex-direction: column;
-  padding: 5rem;
+  padding: 3rem;
   max-width: 100%;
   min-height: 80vh;
   align-items: center;
@@ -17,8 +17,7 @@
 }
 .contenedor {
   background-color: #eee;
-  padding: 5rem;
-  padding: 5rem 10rem;
+  padding: 3rem;
 }
 
 .agregado {
@@ -56,10 +55,30 @@
 }
 
 .button {
+  font-size: 12px !important;
+  margin-top: 10px;
   border-radius: 0.7rem;
   color: #fff;
-  background-color: #3f51b5;
-  padding: 1rem 2.6rem;
+  background-color: #fd611a;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  padding: 0.5rem 1.3rem;
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14),
+    0 1px 5px 0 rgba(0, 0, 0, 0.12);
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+  display: inline-block;
+  white-space: nowrap;
+  text-decoration: none;
+  vertical-align: baseline;
+  min-width: 64px;
+  line-height: 36px;
+  border-radius: 4px;
+  overflow: visible;
+  transform: translate3d(0, 0, 0);
+  transition: background 400ms cubic-bezier(0.25, 0.8, 0.25, 1),
+    box-shadow 280ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button:hover {
@@ -72,8 +91,8 @@
 }
 
 .categoria {
-  background-color: #f50057;
-  color: white;
+  background-color: #fd611a;
+  color: black;
   height: 40px;
   display: inline-flex;
   outline: 0;
@@ -99,7 +118,6 @@
 
 .icon {
   display: inline-block;
-  /* Agrega aquí los estilos para tu icono, por ejemplo, utilizando una fuente de iconos */
 }
 
 .text {
@@ -122,4 +140,23 @@
 
 .icon-container:hover .text {
   opacity: 1;
+}
+
+@media screen and (max-width: 800px) {
+  .div2 {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .contenedor {
+    padding: 2rem 0rem;
+  }
+  .div {
+    padding: 2rem 1rem;
+    border-radius: 0;
+  }
+  .text{
+    left: -6rem;
+  }
 }

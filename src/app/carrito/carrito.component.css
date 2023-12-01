@@ -1,8 +1,6 @@
 .container {
-  background-color: #fff;
   display: flex;
   flex-direction: column;
-  margin: 1rem;
   min-height: 80vh;
   justify-content: center;
   align-items: center;
@@ -10,7 +8,6 @@
 
 .div2 {
   padding: 1rem;
-
 }
 
 .icon {
@@ -24,13 +21,16 @@
   color: red;
 }
 
-
 .div {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 1rem;
-  margin: 1rem;
+  margin: 10px 0;
+  width: 100%;
+  background-color: white;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .img {
@@ -44,14 +44,12 @@
   max-width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
-  white-space: nowrap
+  white-space: nowrap;
 }
 
 .divPrecio {
   display: flex;
-  padding: 0 3rem;
   flex-direction: row;
-  width: 13rem;
   justify-content: center;
 }
 
@@ -64,9 +62,7 @@
   flex-direction: row;
   justify-content: flex-start;
   align-items: center;
-  margin: 0 4rem;
-  width: 40rem;
-  min-width: 40rem;
+  max-width: 50%;
 }
 
 .nombre {
@@ -79,19 +75,12 @@
   font-size: larger;
 }
 
-
-
 .contenedor {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   padding: 5rem;
-}
-
-.div {
-  border-bottom: 1px solid rgba(0, 0, 0, .1);
-
 }
 
 .btncontador {
@@ -105,11 +94,12 @@
 
 .divCantidad {
   display: flex;
-  align-items: stretch;
+  align-items: center;
   justify-content: space-around;
   border: solid 1px gray;
   padding: 0.4rem;
   width: 7rem;
+  margin: 10px;
 }
 
 .divPrecioTotal {
@@ -120,10 +110,9 @@
 
 .divPrecioTotal2 {
   display: flex;
-  padding: 0 3rem;
   padding: 2rem;
   flex-direction: row;
-  width: 50rem;
+  width: 50%;
   justify-content: space-between;
   align-items: center;
 }
