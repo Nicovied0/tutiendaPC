@@ -26,7 +26,7 @@ export class NavComponent {
   goPanelAdmin() {
     this.router.navigate(['/perfil/administrador']);
   }
-  
+
   goProductos() {
     this.router.navigate(['/productos']);
   }
@@ -37,10 +37,21 @@ export class NavComponent {
   goEnvio() {
     this.router.navigate(['/formasDeEnvio']);
   }
-  goAyuda(){
+  goAyuda() {
     this.router.navigate(['/ayuda']);
   }
-  goSponsors(){
+  goSponsors() {
     this.router.navigate(['/sponsors']);
+  }
+
+  navigateToOferts(componentId: string) {
+    this.router.navigate(['/']).then(() => {
+      setTimeout(() => {
+        const element = document.getElementById(componentId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+    });
   }
 }
