@@ -1,0 +1,9 @@
+.div {
+  padding: 1rem;
+}
+.subtitle {
+  color: var(--secondary-color);
+}
+.text{
+    font-size: smaller;
+}
