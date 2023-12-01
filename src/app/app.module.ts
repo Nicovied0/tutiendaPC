@@ -34,6 +34,8 @@ import { AddProductsComponent } from './add-products/add-products.component';
 import { FiltersComponent } from './filters/filters.component';
 import { AyudaComponent } from './ayuda/ayuda.component';
 import { PreguntasComponent } from './preguntas/preguntas.component';
+import { EmpresasComponent } from './empresas/empresas.component';
+import { SponsorsComponent } from './sponsors/sponsors.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,6 +61,8 @@ import { PreguntasComponent } from './preguntas/preguntas.component';
     FiltersComponent,
     AyudaComponent,
     PreguntasComponent,
+    EmpresasComponent,
+    SponsorsComponent,
   ],
   imports: [
     BrowserModule,

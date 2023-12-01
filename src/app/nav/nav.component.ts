@@ -40,4 +40,7 @@ export class NavComponent {
   goAyuda(){
     this.router.navigate(['/ayuda']);
   }
+  goSponsors(){
+    this.router.navigate(['/sponsors']);
+  }
 }

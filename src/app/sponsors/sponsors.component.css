@@ -1,0 +1,17 @@
+.div {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  
+  
+  .div3 {
+   
+    width: 100%;
+    margin: 4rem 1rem;
+    border-radius: 2rem;
+  }
+  
