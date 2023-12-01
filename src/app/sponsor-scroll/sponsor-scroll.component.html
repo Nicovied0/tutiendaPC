@@ -3,9 +3,10 @@
     <div class="carousel-container">
       <div class="carousel-track">
         <ng-container *ngFor="let imagen of images">
-          
-            <img [src]="imagen.src" alt="Producto" class="img" />
-        
+          <img [src]="imagen.src" alt="Producto" class="img" />
+        </ng-container>
+        <ng-container *ngFor="let imagen of images2">
+          <img [src]="imagen.src" alt="Producto" class="img" />
         </ng-container>
       </div>
     </div>
