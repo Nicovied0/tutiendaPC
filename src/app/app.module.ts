@@ -36,6 +36,7 @@ import { AyudaComponent } from './ayuda/ayuda.component';
 import { PreguntasComponent } from './preguntas/preguntas.component';
 import { EmpresasComponent } from './empresas/empresas.component';
 import { SponsorsComponent } from './sponsors/sponsors.component';
+import { SponsorScrollComponent } from './sponsor-scroll/sponsor-scroll.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,6 +64,7 @@ import { SponsorsComponent } from './sponsors/sponsors.component';
     PreguntasComponent,
     EmpresasComponent,
     SponsorsComponent,
+    SponsorScrollComponent,
   ],
   imports: [
     BrowserModule,
