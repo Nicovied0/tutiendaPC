@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ProductosService } from '../Servicios/productos.service';
 import { Router } from '@angular/router';
 import Swal from 'sweetalert2';
+import { PayService } from '../Servicios/pay.service';
 
 @Component({
   selector: 'app-carrito',
@@ -14,7 +15,7 @@ export class CarritoComponent {
   public carritoVacio: boolean = true;
   public precioTotal: number = 0;
 
-  constructor(private productosService: ProductosService, private router: Router,) { }
+  constructor(private productosService: ProductosService, private router: Router, private payService: PayService) { }
 
   ngOnInit() {
 
@@ -34,27 +35,20 @@ export class CarritoComponent {
 
   }
 
-  comprar() {
+  async comprar(precioTotal: any) {
     const total = this.precioTotal
-    console.log(total, "soy ese")
-    Swal.fire({
-      title: 'Estas seguro de confirmar la compra?',
-      text: `El monto es de  $${total}.`,
-      icon: 'warning',
-      showCancelButton: true,
-      confirmButtonColor: '#3085d6',
-      cancelButtonColor: '#d33',
-      cancelButtonText: 'No, cancelar compra!',
-      confirmButtonText: 'Si, Comprar!'
-    }).then((result) => {
-      if (result.isConfirmed) {
-        Swal.fire(
-          'Pago realizado!',
-          `Valor total del monto $${total}.`,
-          'success'
-        )
-      }
-    })
+    const nombre = "Productos varios"
+    try {
+      const resultadoCompra = await this.payService.createOrder(total, nombre);
+      const init_point = resultadoCompra.init_point;
+      this.goMercadoPago(init_point);
+    } catch (error) {
+      console.error('Error al crear el pedido:', error);
+    }
+  }
+
+  goMercadoPago(init_point: any) {
+    window.location.href = init_point;
   }
 
   goProductos() {
