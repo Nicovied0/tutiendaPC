@@ -27,14 +27,14 @@
 }
 
 @media screen and (max-width: 600px) {
-  .fiscal{
+  .fiscal {
     display: none;
   }
   .footer-content {
     flex-direction: column;
     align-items: center;
   }
-  .footer-info{
+  .footer-info {
     margin-bottom: 10px;
   }
 }

@@ -22,6 +22,7 @@ export class ProductosEditService {
     const url = `https://tu-tienda-pc-default-rtdb.firebaseio.com/productos/${id}.json`;
     return this.http.get<any>(url).toPromise();
   }
+
   editProductoById(id: string, producto: any) {
     const url = `https://tu-tienda-pc-default-rtdb.firebaseio.com/productos/${id}.json`;
     return this.http.put(url, producto).toPromise();
@@ -29,11 +30,7 @@ export class ProductosEditService {
 
   deleteProductoById(id: number) {
     const url = `https://tu-tienda-pc-default-rtdb.firebaseio.com/productos/${id}.json`;
-    console.log(`soy el del service ${id}, este es el id`);
-
-    // En lugar de eliminar el producto, actualiza la propiedad "activo" a falso
     const productoDesactivado = { activo: false };
-
     return this.http.patch<any>(url, productoDesactivado).toPromise();
 
   }

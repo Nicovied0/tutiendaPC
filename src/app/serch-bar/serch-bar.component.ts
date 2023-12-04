@@ -35,7 +35,6 @@ export class SerchBarComponent {
     });
   }
   goProduct(id: number) {
-    console.log(id)
     this.showDropdown = false
     this.value = ''
     this.router.navigate(['/producto', id]);

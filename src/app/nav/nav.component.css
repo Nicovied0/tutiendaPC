@@ -13,12 +13,27 @@
   padding: 1rem 0.5rem 0;
   align-items: center;
 }
+
 .nav-title {
   cursor: pointer;
   text-wrap: nowrap;
   font-size: x-large;
   font-weight: 900;
   margin: 0.3rem;
+}
+
+.cart-icon {
+  position: relative;
+}
+
+.cart-counter {
+  position: absolute;
+  top: 37%;
+  left: 82%;
+  transform: translate(-50%, -50%);
+  margin: 0;
+  color: red;
+  font-size: small;
 }
 
 .serchbar {
@@ -45,6 +60,7 @@
   align-items: center;
   justify-content: center;
 }
+
 .btns {
   color: #fff;
   margin: 0.5rem;
@@ -52,6 +68,7 @@
   font-weight: 500;
   cursor: pointer;
 }
+
 .btns:hover {
   color: #000;
 }

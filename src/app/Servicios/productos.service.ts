@@ -22,7 +22,7 @@ export class ProductosService {
         if (producto && producto.activo !== false) {
           return producto;
         } else {
-          return null; 
+          return null;
         }
       });
   }
@@ -109,9 +109,6 @@ export class ProductosService {
           .filter((producto: any) => producto.activo !== false)
           .sort(() => Math.random() - 0.5)
           .slice(0, 7);
-
-        console.log("Oferta:");
-        console.log(productosOferta);
         return productosOferta;
       }
 
@@ -129,23 +126,18 @@ export class ProductosService {
     } else {
       this.carrito = [];
     }
-    console.log("soy el carrito");
-    console.log(this.carrito);
+
     return this.carrito;
   }
 
 
   deleteProductoCarrito(id: any): any {
-    console.log(id)
     const carritoActual = this.getProductoCarrito()
     const index = this.getProductoCarrito().findIndex(objeto => objeto.id === id)
     if (index !== -1) {
       carritoActual.splice(index, 1);
 
     }
-    console.log(id, "soy el id")
-    console.log(carritoActual, "soy el filter")
-    // console.log(filter, "soy el filter")
     localStorage.setItem('carrito', JSON.stringify(carritoActual));
   }
 

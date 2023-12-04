@@ -35,7 +35,6 @@ export class ProfileComponent {
     console.log(this.loginService.getIdToken())
     console.log(this.loginService.isAuthenticated())
     if (this.loginService.isAuthenticated() === true) {
-      // alert('Usted se encuentra logeado')
       Swal.fire({
         title: 'Felicitaciones!',
         text: 'Usted se encuentra logeado',
@@ -43,7 +42,6 @@ export class ProfileComponent {
         confirmButtonText: 'Continuar'
       })
     } else {
-      // alert('Usted no se encuentra logeado')
       Swal.fire({
         title: 'Error!',
         text: 'Usted no se encuentra logueado!',
@@ -55,9 +53,9 @@ export class ProfileComponent {
 
   userProfile() {
     const usuarioLogeado = JSON.parse(localStorage.getItem('usuario') || '[]')
-    console.log(usuarioLogeado)
     this.getProfile = usuarioLogeado
   }
+  
   goPanel() {
     this.router.navigate(['/perfil/administrador']);
   }

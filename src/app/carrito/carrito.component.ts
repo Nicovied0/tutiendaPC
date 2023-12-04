@@ -20,9 +20,8 @@ export class CarritoComponent {
 
     this.productos = this.productosService.getProductoCarrito();
     this.productos.forEach(producto => {
-      producto.cantidad = 1; // Agregar la propiedad 'cantidad' y asignarle el valor inicial
+      producto.cantidad = 1;
     });
-    console.log(this.productos);
     this.loading = true;
     if (this.productos.length === 0) {
       this.carritoVacio = true;
@@ -36,7 +35,6 @@ export class CarritoComponent {
   }
 
   comprar() {
-    // Implementa aquí la lógica para realizar la compra
     const total = this.precioTotal
     console.log(total, "soy ese")
     Swal.fire({

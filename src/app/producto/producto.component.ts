@@ -31,7 +31,6 @@ export class ProductoComponent {
   getProductById(id: string) {
     this.productosService.getProductoById(id)
       .then(producto => {
-        console.log(producto);
         this.productoId = producto;
         this.loading = true;
         this.checkCarrito();
@@ -45,6 +44,7 @@ export class ProductoComponent {
     const carritoActual = localStorage.getItem('carrito');
     if (carritoActual) {
       this.carrito = JSON.parse(carritoActual);
+      window.location.reload()
     }
     const existeProducto = this.carrito.find(producto => producto.id === this.productoId.id);
     if (!existeProducto) {

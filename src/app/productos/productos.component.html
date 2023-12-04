@@ -11,8 +11,7 @@
   </div>
   <div class="filtersAndCards">
     <div class="divFiltros">
-<app-filters (filterChanged)="onFilterChange($event)"></app-filters>
-    
+      <app-filters (filterChanged)="onFilterChange($event)"></app-filters>
     </div>
     <div class="div2">
       <div
@@ -29,7 +28,10 @@
             <div class="description">
               <h3 class="precio">$ {{ producto.precio }}</h3>
               <p class="parrafo">Envio Gratis</p>
-              <h2 class="nombre" [ngClass]="{ 'show-nombre': hoverIndex === i }">
+              <h2
+                class="nombre"
+                [ngClass]="{ 'show-nombre': hoverIndex === i }"
+              >
                 {{ hoverIndex === i ? producto.nombre : "" }}
               </h2>
             </div>

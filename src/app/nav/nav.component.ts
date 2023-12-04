@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { ProductosService } from './../Servicios/productos.service';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { LoginService } from '../Servicios/login.service';
 
@@ -7,15 +8,21 @@ import { LoginService } from '../Servicios/login.service';
   templateUrl: './nav.component.html',
   styleUrls: ['./nav.component.css']
 })
-export class NavComponent {
+export class NavComponent implements OnInit {
 
-  constructor(private router: Router, private loginService: LoginService) { }
+  constructor(private router: Router, private loginService: LoginService, private productosService: ProductosService) { }
 
   public userAdmin = this.loginService.adminUser()
 
+  emptyCart: boolean | undefined = undefined
+
+  ngOnInit() {
+    this.getProductosStorage()
+    console.log(this.emptyCart)
+  }
+
   goProfile() {
     this.router.navigate(['/perfil']);
-    // console.log(this.userAdmin,"soy ese")
   }
   goHome() {
     this.router.navigate(['/']);
@@ -53,5 +60,21 @@ export class NavComponent {
         }
       }, 100);
     });
+  }
+
+  getProductosStorage() {
+    const carritoService = this.productosService.getProductoCarrito();
+
+    const tieneElementos = carritoService.length > 0;
+
+    if (tieneElementos) {
+      console.log('El carrito tiene productos.');
+      this.emptyCart = true
+      return true;
+    } else {
+      console.log('El carrito está vacío.');
+      this.emptyCart = false
+      return false;
+    }
   }
 }

@@ -1,3 +1,4 @@
-.collapsed,.accordion-body{
-    cursor: pointer !important;
+.collapsed,
+.accordion-body {
+  cursor: pointer !important;
 }
