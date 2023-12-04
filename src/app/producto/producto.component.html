@@ -34,6 +34,13 @@
       <div class="buttonsCarrito" *ngIf="productoId.dispible">
         <button
           class="button"
+          (click)="comprar(productoId?.precio, productoId?.nombre)"
+        >
+          Comprar
+        </button>
+
+        <button
+          class="button"
           (click)="agregarAlCarrito()"
           *ngIf="!carritoAgregado"
         >

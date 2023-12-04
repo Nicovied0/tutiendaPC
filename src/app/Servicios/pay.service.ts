@@ -1,15 +1,27 @@
-// import { Injectable } from "@angular/core";
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
 
-// @Injectable({ providedIn: 'root' })
-
-const access_token: string = 'TEST-7378055420324417-061321-4748a4823c67e5a692dfde61f1d5a7df-1265040302';
-
+@Injectable({
+  providedIn: 'root'
+})
 export class PayService {
-  // configureMercadoPago() {
-  //   // const configuration: mercadopago.configure  {
-  //   //
-  //   // };
+  url = "https://cpu-central-back.vercel.app/api/pay/create-order";
 
-  //   mercadopago.configure({ access_token: access_token });
-  // }
+  constructor(private http: HttpClient) {}
+
+  async createOrder(unitPrice: number, title: string): Promise<any> {
+    const body = {
+      unit_price: unitPrice,
+      title: title
+    };
+
+    try {
+      const response = await this.http.post(this.url, body).toPromise();
+      return response;
+    } catch (error) {
+      throw new Error("error");
+    }
+  }
 }
+

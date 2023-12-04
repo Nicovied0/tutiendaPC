@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ProductosService } from '../Servicios/productos.service';
 import { Router } from '@angular/router';
+import { PayService } from '../Servicios/pay.service';
 
 @Component({
   selector: 'app-producto',
@@ -16,7 +17,7 @@ export class ProductoComponent {
   public carrito: any[] = [];
   public carritoAgregado = false;
 
-  constructor(private route: ActivatedRoute, private productosService: ProductosService, private router: Router) { }
+  constructor(private route: ActivatedRoute, private productosService: ProductosService, private router: Router, private payService: PayService) { }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
@@ -72,4 +73,24 @@ export class ProductoComponent {
   goCarrito() {
     this.router.navigate(['/carrito']);
   }
+
+  goMercadoPago(init_point: any) {
+    window.location.href = init_point;
+  }
+
+  async comprar(precio: any, nombre: string) {
+    const precioNumerico = parseFloat(precio);
+    try {
+      const resultadoCompra = await this.payService.createOrder(precioNumerico, nombre);
+      console.log('Pedido creado:', resultadoCompra);
+      const init_point = resultadoCompra.init_point;
+      console.log(init_point);
+      this.goMercadoPago(init_point);
+    } catch (error) {
+      console.error('Error al crear el pedido:', error);
+    }
+  }
+
+
 }
+
