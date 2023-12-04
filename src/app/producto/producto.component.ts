@@ -82,9 +82,7 @@ export class ProductoComponent {
     const precioNumerico = parseFloat(precio);
     try {
       const resultadoCompra = await this.payService.createOrder(precioNumerico, nombre);
-      console.log('Pedido creado:', resultadoCompra);
       const init_point = resultadoCompra.init_point;
-      console.log(init_point);
       this.goMercadoPago(init_point);
     } catch (error) {
       console.error('Error al crear el pedido:', error);

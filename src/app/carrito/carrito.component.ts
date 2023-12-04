@@ -29,9 +29,7 @@ export class CarritoComponent {
     } else {
       this.carritoVacio = false;
     }
-
     this.calcularPrecioTotal();
-    console.log("carrito vacio", this.carritoVacio);
 
   }
 
