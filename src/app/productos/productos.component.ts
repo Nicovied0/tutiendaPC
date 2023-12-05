@@ -11,6 +11,7 @@ export class ProductosComponent {
   constructor(private productosService: ProductosService, private router: Router) { }
   public loading = false
   productos: any = []
+  productosFiltrados = false
   hover: boolean = false;
   hoverIndex: number = -1;
   public disponible: boolean = false
@@ -18,7 +19,6 @@ export class ProductosComponent {
   ngOnInit() {
     this.productosService.getProductos().then((results) => {
       this.productos = results
-      console.log(this.productos)
       this.loading = true
 
 
@@ -43,7 +43,6 @@ export class ProductosComponent {
 
 
   verDetalle(id: number) {
-    console.log(id)
     this.router.navigate(['/producto', id]);
   }
 
@@ -61,7 +60,6 @@ export class ProductosComponent {
 
   onFilterChange(filter: string) {
     this.selectedFilter = filter; 
-    console.log(filter,"soy el filter de padree")
   }
   
   applyFilter() {
@@ -70,10 +68,14 @@ export class ProductosComponent {
     } else if (this.selectedFilter === 'mayor') {
       return this.productos.slice().sort((a: any, b: any) => b.precio - a.precio);
     } else if (this.selectedFilter) {
-      // Filtrar por tipo
-      return this.productos.filter((producto: any) => producto.type === this.selectedFilter);
+      const filter = this.productos.filter((producto: any) => producto.type === this.selectedFilter);
+      if(filter.length){
+        this.productosFiltrados = true
+      }else{
+        this.productosFiltrados = false
+      }
+      return filter
     } else {
-      // En caso de que no haya filtro seleccionado, devolver la lista completa de productos
       return this.productos;
     }
   }
