@@ -1,5 +1,5 @@
 <div class="div">
-  <div *ngIf="profile; else elseDiv">
+  <div *ngIf="profileAdmin">
     <div>
       <h2>Email :</h2>
       <h3>{{ getProfile?.email }}</h3>
@@ -9,7 +9,15 @@
       Ir a panel Administrador
     </button>
   </div>
-  <ng-template #elseDiv>
+  <div *ngIf="profile">
+    <div>
+      <h2>Email :</h2>
+      <h3>{{ getProfile?.email }}</h3>
+    </div>
+    <button class="btn btn-danger" (click)="logout()">Cerrar sesion</button>
+  </div>
+
+  <div *ngIf="!profileAdmin && !profile">
     <app-login></app-login>
-  </ng-template>
+  </div>
 </div>

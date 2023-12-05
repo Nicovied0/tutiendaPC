@@ -14,17 +14,32 @@ import Swal from 'sweetalert2'
 export class LoginComponent {
   constructor(private loginService: LoginService, private authService: AuthService) { }
 
+  public register = true
   public userLogin = false
 
   login(form: NgForm) {
     const email = form.value.email
     const password = form.value.password
-    console.log(email + password)
+
     this.userLogin = true
-    console.log(this.userLogin)
     this.authService.login(email, password)
   }
 
+  goRegister() {
+    this.register = false
+  }
+
+  goLogin() {
+    this.register = true
+  }
+
+  toRegister(form: NgForm) {
+    const email = form.value.email
+    const password = form.value.password
+    const name = form.value.name
+    this.authService.register(name,email, password)
+
+  }
 
   logout() {
     this.loginService.logout()

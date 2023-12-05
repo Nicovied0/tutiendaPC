@@ -10,7 +10,8 @@ import { Router } from '@angular/router';
 export class ProfileComponent {
   constructor(private loginService: LoginService,private authService: AuthService, private router: Router) { }
 
-  public profile = false
+  public profileAdmin :boolean|null= null
+  public profile: boolean|null = null
   public getProfile: any
 
   ngOnInit() {
@@ -19,8 +20,10 @@ export class ProfileComponent {
   }
 
   logeado(){
-    this.profile =  this.authService.adminUser()
-    console.log("se ejecuto logeado" + this.profile)
+    this.profileAdmin =  this.authService.adminUser()
+    this.profile = this.authService.publicUser()
+    console.log("se ejecuto profileAdmin" + this.profileAdmin)
+    console.log("se ejecuto profile" + this.profile)
   }
 
   logout() {

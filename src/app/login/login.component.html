@@ -1,4 +1,4 @@
-<div class="home-div">
+<div class="home-div" *ngIf="register">
   <form #f="ngForm" (ngSubmit)="f.form.valid && login(f)" class="forms">
     <div class="m-3 d-flex flex-column">
       <label class="col-sm-2 col-form-label"> Email </label>
@@ -24,6 +24,51 @@
     </div>
     <div class="m-3 d-flex">
       <button class="btn btn-primary">Iniciar sesion</button>
+      
     </div>
+    <p>No tienes cuenta, <a (click)="goRegister()">registrate!</a></p>
+  </form>
+</div>
+
+<div class="home-div" *ngIf="!register">
+  <form #f="ngForm" (ngSubmit)="f.form.valid && toRegister(f)" class="forms">
+    <div class="m-3 d-flex flex-column">
+      <label class="col-sm-2 col-form-label"> Nombre </label>
+      <input
+        type="text"
+        name="name"
+        placeholder="Nombre"
+        class="form-control input"
+        required
+        ngModel
+      />
+    </div>
+    <div class="m-3 d-flex flex-column">
+      <label class="col-sm-2 col-form-label"> Email </label>
+      <input
+        type="text"
+        name="email"
+        placeholder="Email"
+        class="form-control input"
+        required
+        ngModel
+      />
+    </div>
+    <div class="m-3 d-flex flex-column">
+      <label class="col-sm-2 col-form-label"> Contraseña </label>
+      <input
+        name="password"
+        type="password"
+        placeholder="Contraseña"
+        class="form-control  input "
+        required
+        ngModel
+      />
+    </div>
+    <div class="m-3 d-flex">
+      <button class="btn btn-primary">Registrarse</button>
+      
+    </div>
+    <p>Ya tienes cuenta, <a (click)="goLogin()">Inicia sesion!</a></p>
   </form>
 </div>

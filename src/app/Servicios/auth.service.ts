@@ -8,6 +8,7 @@ export interface LoginResponse {
     profile: any
 }
 
+
 @Injectable({
     providedIn: 'root'
 })
@@ -16,10 +17,19 @@ export class AuthService {
 
     constructor(private http: HttpClient) { }
 
-    register(name: string, email: string, password: string): Observable<any> {
-        const body = { name, email, password };
-        return this.http.post(`${this.baseUrl}/register`, body);
-    }
+    async register(name: string, email: string, password: string): Promise<any> {
+        try {
+          const body = { name, email, password };
+          const post = await this.http.post(`${this.baseUrl}/register`, body).toPromise();
+          console.log(post);
+          alert("Registrado correctamente")
+          window.location.reload()
+          return post;
+        } catch (error) {
+          console.error('Registration failed:', error);
+          throw error;
+        }
+      }
 
     async login(email: string, password: string): Promise<LoginResponse> {
         const body = { email, password };
@@ -43,6 +53,14 @@ export class AuthService {
     adminUser() {
         const usuarioLogeado = JSON.parse(localStorage.getItem('profile') || '[]')
         if (usuarioLogeado.role === 'admin' || usuarioLogeado.role === 'superAdmin') {
+            return true;
+        }
+        return false;
+    }
+    
+    publicUser() {
+        const usuarioLogeado = JSON.parse(localStorage.getItem('profile') || '[]')
+        if (usuarioLogeado.role === 'public') {
             return true;
         }
         return false;
