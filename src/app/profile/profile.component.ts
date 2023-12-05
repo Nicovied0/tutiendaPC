@@ -1,3 +1,4 @@
+import { AuthService } from './../Servicios/auth.service';
 import { Component } from '@angular/core';
 import { LoginService } from '../Servicios/login.service';
 import Swal from 'sweetalert2'
@@ -8,21 +9,19 @@ import { Router } from '@angular/router';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent {
-  constructor(private loginService: LoginService, private router: Router) { }
+  constructor(private loginService: LoginService,private authService: AuthService, private router: Router) { }
 
   public profile = false
   public getProfile: any
 
   ngOnInit() {
-    console.log(this.loginService.isAuthenticated())
-    if (this.loginService.isAuthenticated() === true) {
-      this.profile = true
-    }
-    if (this.loginService.sessionActive()) {
-
-      this.profile = true
-    }
+    this.logeado()
     this.userProfile()
+  }
+
+  logeado(){
+    this.profile =  this.authService.adminUser()
+    console.log("se ejecuto logeado" + this.profile)
   }
 
   logout() {
@@ -31,29 +30,12 @@ export class ProfileComponent {
     window.location.reload()
   }
 
-  consoleToken() {
-    console.log(this.loginService.getIdToken())
-    console.log(this.loginService.isAuthenticated())
-    if (this.loginService.isAuthenticated() === true) {
-      Swal.fire({
-        title: 'Felicitaciones!',
-        text: 'Usted se encuentra logeado',
-        icon: 'success',
-        confirmButtonText: 'Continuar'
-      })
-    } else {
-      Swal.fire({
-        title: 'Error!',
-        text: 'Usted no se encuentra logueado!',
-        icon: 'warning',
-        confirmButtonText: 'Continuar'
-      })
-    }
-  }
 
   userProfile() {
-    const usuarioLogeado = JSON.parse(localStorage.getItem('usuario') || '[]')
+    const usuarioLogeado = JSON.parse(localStorage.getItem('profile') || '[]')
+
     this.getProfile = usuarioLogeado
+    console.log(this.getProfile)
   }
   
   goPanel() {
