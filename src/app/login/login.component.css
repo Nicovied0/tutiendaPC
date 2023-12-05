@@ -11,6 +11,12 @@
 .input{
   min-width: 20rem;
 }
+.butonText{
+  font-size: larger;
+    text-decoration: none;
+    color: var(--secondary-color);
+    cursor: pointer;
+}
 
 @media screen and (max-width: 500px) {
   .input{
