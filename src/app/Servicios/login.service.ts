@@ -1,9 +1,5 @@
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import firebase from 'firebase/compat/app';
-import 'firebase/compat/auth';
-
-
 
 @Injectable()
 export class LoginService {
@@ -17,9 +13,9 @@ export class LoginService {
   }
 
   adminUser() {
-    const usuarioLogeado = JSON.parse(localStorage.getItem('usuario') || '[]')
+    const usuarioLogeado = JSON.parse(localStorage.getItem('profile') || '[]')
 
-    if (usuarioLogeado.email === 'userAdmin@gmail.com') {
+    if (usuarioLogeado.role === 'userAdmin@gmail.com') {
       return true
     }
     return false

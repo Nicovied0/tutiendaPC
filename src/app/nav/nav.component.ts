@@ -1,7 +1,7 @@
 import { ProductosService } from './../Servicios/productos.service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { LoginService } from '../Servicios/login.service';
+import { AuthService } from '../Servicios/auth.service';
 
 @Component({
   selector: 'app-nav',
@@ -10,15 +10,16 @@ import { LoginService } from '../Servicios/login.service';
 })
 export class NavComponent implements OnInit {
 
-  constructor(private router: Router, private loginService: LoginService, private productosService: ProductosService) { }
+  constructor(private router: Router, private authService: AuthService, private productosService: ProductosService) { }
 
-  public userAdmin = this.loginService.adminUser()
+  public userAdmin : boolean| null = null 
 
   emptyCart: boolean | undefined = undefined
 
   ngOnInit() {
     this.getProductosStorage()
-    console.log(this.emptyCart)
+    this.getAdminIcon()
+    console.log(this.userAdmin)
   }
 
   goProfile() {
@@ -49,6 +50,9 @@ export class NavComponent implements OnInit {
   }
   goSponsors() {
     this.router.navigate(['/sponsors']);
+  }
+  getAdminIcon(){
+    this.userAdmin =  this.authService.adminUser()
   }
 
   navigateToOferts(componentId: string) {

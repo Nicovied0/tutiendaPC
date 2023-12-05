@@ -16,7 +16,6 @@ export class SearchService {
         const termino = data.toLowerCase();
         return nombre.includes(termino) || categoria.includes(termino);
       }).slice(0, 5); 
-      console.log(filteredProducts, "resultados de búsqueda");
       return filteredProducts;
     } catch (error) {
       console.error('Error occurred while getting products:', error);

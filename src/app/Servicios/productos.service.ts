@@ -27,7 +27,6 @@ export class ProductosService {
       });
   }
 
-
   async getMemorias() {
     try {
       const productos = await this.http.get<any[]>('https://tu-tienda-pc-default-rtdb.firebaseio.com/productos.json').toPromise();
@@ -78,6 +77,7 @@ export class ProductosService {
       return [];
     }
   }
+  
   async getGabinetes() {
     try {
       const productos = await this.http.get<any[]>('https://tu-tienda-pc-default-rtdb.firebaseio.com/productos.json').toPromise();

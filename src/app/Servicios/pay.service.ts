@@ -8,7 +8,7 @@ import { Observable } from "rxjs";
 export class PayService {
   url = "https://cpu-central-back.vercel.app/api/pay/create-order";
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   async createOrder(unitPrice: number, title: string): Promise<any> {
     const body = {

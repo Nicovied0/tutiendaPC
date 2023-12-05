@@ -31,9 +31,9 @@ export class OfertComponent {
   }
 
   goProducto(id: string) {
-    console.log(this.productos)
 
     this.router.navigate(['/producto', id]);
+    window.scroll(0,0)
   }
 
 }

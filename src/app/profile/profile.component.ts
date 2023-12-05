@@ -1,7 +1,6 @@
 import { AuthService } from './../Servicios/auth.service';
 import { Component } from '@angular/core';
 import { LoginService } from '../Servicios/login.service';
-import Swal from 'sweetalert2'
 import { Router } from '@angular/router';
 @Component({
   selector: 'app-profile',

@@ -17,7 +17,6 @@ export class ProductosEditService {
     ).toPromise();
   }
 
-
   getProductoById(id: string) {
     const url = `https://tu-tienda-pc-default-rtdb.firebaseio.com/productos/${id}.json`;
     return this.http.get<any>(url).toPromise();

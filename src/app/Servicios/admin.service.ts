@@ -48,15 +48,13 @@ export class AdminService {
       const productos = await this.obtenerProductos();
       const ultimoId = this.obtenerUltimoId(productos);
       const nuevoId = this.generarNuevoId(ultimoId);
-
-      producto.id = nuevoId.toString(); // Convertir el ID a una cadena antes de asignarlo
+      producto.id = nuevoId.toString();
 
       const nuevoProducto = {
         [nuevoId]: producto
       };
 
       const response = await this.http.patch<any>(url, nuevoProducto).toPromise();
-      console.log('Producto creado:', response);
       return response;
     } catch (error) {
       console.error('Error al crear el producto:', error);

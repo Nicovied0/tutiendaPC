@@ -5,7 +5,7 @@ import { Observable } from 'rxjs';
 
 export interface LoginResponse {
     token: string;
-    profile:any
+    profile: any
 }
 
 @Injectable({
@@ -36,7 +36,7 @@ export class AuthService {
             return profileResponse!;
         } catch (error) {
             console.error('Login failed:', error);
-            throw error; 
+            throw error;
         }
     }
 
