@@ -3,7 +3,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-
 }
 
 .div2 {
@@ -17,9 +16,6 @@
   padding: 0.5rem;
 }
 
-
-
-
 .dropdown {
   position: absolute;
   top: 10%;
@@ -32,7 +28,6 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   padding: 10px;
   z-index: 40;
-
 }
 
 .ul {
@@ -75,4 +70,28 @@
 
 .nombre {
   font-size: 1rem;
+}
+
+@media screen and (max-width: 700px) {
+  .li {
+    padding: 0;
+    display:flex;
+    justify-content: space-around;
+  }
+  .nombre{
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .divLi{
+    width: 50%;
+  }
+.dropdown{
+  top: 10%;
+  margin-left: 0;
+  color: grey;
+  width: 100%;
+  padding: 0;
+  left: 0;
+}
 }

@@ -78,3 +78,12 @@
   justify-content: space-evenly;
   width: 100%;
 }
+
+@media screen and (max-width: 500px) {
+  .icon {
+    height: 25px;
+  }
+  .nav-title {
+    display: none;
+  }
+}

@@ -1,8 +1,14 @@
 .div{
   display: flex;
-  width: 100;
+  width: 100%;
   flex-direction: column;
   height: 80vh;
   align-items: center;
   justify-content: center;
+  
+}
+
+@media screen and (max-width: 500px) {
+  .div{
+    align-items: normal; }
 }
